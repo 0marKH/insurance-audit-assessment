@@ -1,0 +1,58 @@
+# Prompt 001 — Hospital 1 deterministic extraction
+
+Date: 14 September 2026.
+
+## User prompt
+
+Read this repo https://github.com/majedzahrani3/insurance_auditing
+
+I want the assessment is clear here let's start by extracting the rules from the contract, let's only work on 1 for now,
+
+we are going to start as engine based rules, no AI or fancy stuff yet, we need to test the best grounding result we can get and them we move to much expensive solution,
+
+I do the the engine Architecture ready, here is how you should build the extractor:
+
+i need this rules from the contract:
+
+For Hospital 1, capture:
+
+| What to extract Examples | |
+|---|---|
+| Contract scope | Hospital, contract number, effective dates, currency |
+| Service catalogue | Exact service name, billing unit, base rate |
+| Definitions | What counts as a business day; how cumulative usage is counted |
+| Adjustment rules | Premium thresholds, weekend uplifts, discount thresholds and percentages |
+| Grouping conditions | Per patient per day, or across all patients over the contract term |
+| Bundles | Specific service pairs, replacement rates, same-patient/same-day condition |
+| Restrictions | Quantity caps, exclusion windows, duplicate billing, valid dates |
+| Calculation instructions | Adjustment order, rounding after each step, invoice summation |
+| Boundary rules | “Exceeds” versus “at least”; usage before the current line; ordering lines on the same date |
+| Evidence and uncertainty | Source section, interpretation, unresolved questions |
+
+Represent each rule using the same basic structure:
+
+Applies to → Condition → Action → Scope → Order → Source → Uncertainty
+
+For example, a volume-discount rule needs more than “60 nights, 10%”:
+
+- Service: Ambulatory Pulmonary Recovery Room Occupancy.
+- Condition: Prior cumulative usage exceeds 60 nights.
+- Action: Apply a 10% discount.
+- Scope: All patients across the contract term.
+- Counting: Exclude the current line; order by service date, then line identifier.
+- Order: After applicable premiums.
+- Source: Sections 2.4, 3, and 7.
+
+After that we will start on the engine, start now, clone the assessment repo and then go
+
+## Development assistance disclosure
+
+Codex read the assessment README and Hospital 1 contract, implemented the Python
+extractor, authored the reviewed prose profile and tests, and wrote the review,
+decision log and interface documentation. Formatting of the prompt above was
+normalized from the conversation; wording was retained.
+
+There are no runtime model prompts, paid model requests, embeddings or agent
+calls in the extractor. The semantic prose templates are an explicit
+development-time interpretation and should be reviewed as such. No subagents
+were used. Invoice and label values were not used to derive contract rules.
