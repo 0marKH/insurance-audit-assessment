@@ -1,0 +1,29 @@
+{
+  "invoice_records": 918,
+  "unique_invoice_ids": 913,
+  "line_records": 11415,
+  "matched_lines": 11131,
+  "known_line_amounts": 10551,
+  "known_invoice_amounts": 457,
+  "invoice_decisions": {
+    "review": 412,
+    "erroneous": 61,
+    "correct": 445
+  },
+  "line_uncertainty_reasons": {
+    "service_match_unresolved": 284,
+    "invalid_date_payability_requires_review": 151,
+    "retention_or_payable_quantity_requires_review": 279,
+    "volume_discount_uncertain": 312,
+    "delivered_quantity_or_duplicate_identity_uncertain": 225,
+    "exclusion_presence_uncertain": 51,
+    "missing_or_ambiguous_invoice_join": 133,
+    "missing_patient_context": 133,
+    "premium_eligibility_uncertain": 13,
+    "contract_quantity_unknown_due_to_unit_mismatch": 11,
+    "bundle_eligibility_uncertain": 3
+  },
+  "confidence": null,
+  "runtime_model_dependencies": [],
+  "scope": "Hospital 1 development only; not a Hospitals 2\u20135 submission"
+}

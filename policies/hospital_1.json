@@ -1,0 +1,122 @@
+{
+  "id": "hospital_1_user_conventions_v1",
+  "schema_version": "1.0",
+  "authority": "User-approved implementation conventions, not additional contract clauses",
+  "source": "prompts/002_open_decisions.md",
+  "decisions": {
+    "exclusions": {
+      "operator": "<=",
+      "same_patient": true,
+      "across_invoices": true,
+      "date_direction": "both",
+      "service_direction": "first_column_only",
+      "excluded_expected_payable_cents": 0,
+      "interpretation": "Check the same patient across all invoices in either date direction, including exactly N days. Only the excluded service charge becomes non-payable; this is not a discount. Inclusive endpoints and patient scope are documented assumptions."
+    },
+    "line_ordering": {
+      "identifier_comparison": "lexical",
+      "sort_direction": "ascending",
+      "expected_line_id_pattern": "^H[1-5]-L[0-9]{5}-[0-9]{2}$",
+      "validation_command": "python3 -m contract_extractor.validate_line_ids",
+      "format_exception_action": "flag_for_review_and_revisit_ordering_convention",
+      "interpretation": "Use ascending lexical text sorting. Validate fixed-width, zero-padded numeric components across the dataset; revisit if exceptions appear."
+    },
+    "cumulative_usage": {
+      "quantity": "original_billed_quantity",
+      "exclude_current_line": true,
+      "include_duplicate_units": true,
+      "include_disallowed_units": true,
+      "subtract_rejected_units": false,
+      "interpretation": "Count all prior original billed quantities for the service, including duplicates and disallowed units; payable corrections never rewrite usage history."
+    },
+    "corrections": {
+      "preserve_original_invoice_lines": true,
+      "preserve_original_billed_amounts": true,
+      "write_targets": [
+        "calculated_expected_payable_quantity",
+        "calculated_expected_payable_cents",
+        "violation_flags",
+        "review_flags"
+      ],
+      "pricing_compliance_basis": "applicable_adjusted_contract_unit_rate_including_bundles_premiums_and_discounts",
+      "ambiguity_policy": {
+        "triggers": [
+          "differing_quantities_prevent_defensible_correction",
+          "other_conflicting_evidence_prevents_defensible_correction"
+        ],
+        "action": "flag_for_review_without_forcing_allocation",
+        "expected_payable_cents_when_indeterminate": null
+      },
+      "daily_caps": {
+        "group_by": [
+          "contract_number",
+          "patient_id",
+          "service",
+          "service_date"
+        ],
+        "allocation_order": [
+          "line_id ASC"
+        ],
+        "identifier_comparison": "lexical",
+        "retain": "earlier_eligible_units",
+        "exclude": "latest_excess_units",
+        "partly_excess_line": "reduce_expected_payable_quantity",
+        "exclude_whole_partly_excess_line": false
+      },
+      "duplicates": {
+        "group_by": [
+          "contract_number",
+          "patient_id",
+          "service",
+          "service_date"
+        ],
+        "retain_payable_occurrences": 1,
+        "selection_priority": [
+          "eligible_occurrence_compliant_with_applicable_adjusted_contract_rate",
+          "earliest_line_id_lexical_among_compliant_occurrences",
+          "if_none_comply_and_service_remains_payable_retain_earliest_line_id_lexical_and_correct_price"
+        ],
+        "excluded_duplicate_expected_payable_cents": 0,
+        "nonpayable_service_must_not_be_reinstated": true
+      },
+      "interpretation": "Preserve originals and flag violations. Cap allocation retains earlier eligible units, including partial lines. Duplicate selection prefers correctly adjusted pricing, then lexical line ID, or corrects the earliest payable occurrence if none comply. Conflicting evidence that prevents a defensible correction is sent for review. These are implementation conventions."
+    },
+    "engine": {
+      "billing_unit_mismatch": "flag_and_leave_quantity_and_expected_amount_unknown_without_conversion_evidence",
+      "daily_premium_quantity": "delivered_quantity_excluding_duplicate_charges",
+      "conflicting_delivered_quantities": "unknown_premium_eligibility",
+      "threshold_premium_scope": "all_applicable_units",
+      "processing_order": [
+        "match_services_and_identify_exclusions",
+        "establish_delivered_quantities_without_duplicate_counting",
+        "determine_premiums_and_adjusted_rates",
+        "select_duplicate_using_adjusted_price_compliance",
+        "allocate_caps_to_retained_eligible_units",
+        "calculate_expected_amounts"
+      ],
+      "quantity_tracks": [
+        "original_billed_quantity",
+        "delivered_quantity",
+        "expected_payable_quantity"
+      ],
+      "nonpayable_implies_not_delivered": false,
+      "contract_identity": "assessment_hospital_context_not_printed_invoice_contract_number",
+      "uncertainty_propagation": [
+        "bundles",
+        "exclusions",
+        "premiums",
+        "cumulative_discounts",
+        "duplicates",
+        "caps"
+      ],
+      "known_violation_requires_known_expected_amount": false,
+      "invalid_dates_correction": "review_no_automatic_zero",
+      "wrong_contract_number_correction": "price_under_hospital_contract_and_flag_identity_violation",
+      "confidence": "no_numeric_score_or_calibration_claim",
+      "interpretation": "Use assessment hospital identity, preserve separate billed/delivered/payable quantities, deduplicate delivered usage for premiums, and apply a qualifying premium to all units. Uncertain identity or quantities propagate to dependent rules. Known violations and unknown expected totals are separate states."
+    }
+  },
+  "additional_sources": [
+    "prompts/003_hospital_1_engine.md"
+  ]
+}
