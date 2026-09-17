@@ -1,0 +1,33 @@
+{
+  "hospital_id": "H5",
+  "invoice_records": 1057,
+  "unique_invoice_ids": 1050,
+  "line_records": 13221,
+  "matched_lines": 12793,
+  "submitted": 466,
+  "correct": 456,
+  "erroneous": 10,
+  "omitted_ids": 584,
+  "omission_reasons": {
+    "bundle_eligibility_uncertain": 39,
+    "cap_actual_quantity_unknown": 6,
+    "contract_quantity_unknown_due_to_unit_mismatch": 12,
+    "contractual_dual_unit_unresolved": 114,
+    "delivered_quantity_or_duplicate_identity_uncertain": 91,
+    "duplicate_correction_not_approved_for_hospital": 4,
+    "exclusion_presence_uncertain": 39,
+    "expected_total_unknown": 584,
+    "facility_code_multiplier_unknown": 7,
+    "invalid_date_payability_requires_review": 27,
+    "invoice_identifier_join_ambiguous": 7,
+    "missing_or_ambiguous_invoice_join": 7,
+    "missing_patient_context": 7,
+    "nonunique_invoice_id": 7,
+    "plan_tier_multiplier_unknown": 7,
+    "premium_eligibility_uncertain": 17,
+    "retention_or_payable_quantity_requires_review": 117,
+    "service_match_unresolved": 358,
+    "volume_discount_uncertain": 288
+  },
+  "coverage": 0.4438095238095238
+}

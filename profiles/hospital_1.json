@@ -1,0 +1,917 @@
+{
+  "name": "Hospital 1 reviewed Markdown grammar",
+  "version": "1.0",
+  "headings": {
+    "1": "## 1. Parties and Term",
+    "2": "## 2. Interpretation",
+    "3": "## 3. Calculation Conventions",
+    "4": "## 4. Rate Schedule",
+    "5": "## 5. Threshold Premiums",
+    "6": "## 6. Non-Business-Day Uplifts",
+    "7": "## 7. Cumulative Volume Discounts",
+    "8": "## 8. Daily Quantity Caps",
+    "9": "## 9. Bundled Services",
+    "10": "## 10. Exclusion Windows",
+    "11": "## 11. Invoicing"
+  },
+  "literals": [
+    {
+      "section": null,
+      "text": "# Provider Services Agreement"
+    },
+    {
+      "section": null,
+      "text": "_Schedule of Contracted Services and Rates_"
+    },
+    {
+      "section": "1",
+      "text": "This Agreement is made between Meridian Health Assurance Group (the \"Payer\") and Northgate Regional Medical Centre (the \"Provider\")."
+    },
+    {
+      "section": "4",
+      "text": "Rates are stated per unit on the basis shown."
+    }
+  ],
+  "metadata_keys": [
+    "Contract number",
+    "Provider",
+    "Payer",
+    "Effective from",
+    "Effective to",
+    "Currency",
+    "Rounding convention"
+  ],
+  "identity": {
+    "Contract number": "INS-H1-2024-0417",
+    "Provider": "Northgate Regional Medical Centre",
+    "Payer": "Meridian Health Assurance Group",
+    "Currency": "GBP",
+    "Rounding convention": "half_up_cent"
+  },
+  "clauses": {
+    "1.1": {
+      "section": "1",
+      "text": "1.1 The Agreement takes effect on 1 January 2024 and expires on 31 December 2025.",
+      "rules": [
+        {
+          "rule_id": "H1-C1-1-1",
+          "kind": "contract_term",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "define_term",
+            "start_source": "preamble.Effective from",
+            "end_source": "preamble.Effective to",
+            "endpoints": "inclusive"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Treat the named effective and expiry dates as included calendar dates. This is the recorded reading of the term wording.",
+          "questions": [],
+          "also_source": [
+            "11.3"
+          ],
+          "evidence_status": "interpretation"
+        }
+      ]
+    },
+    "1.2": {
+      "section": "1",
+      "text": "1.2 Services are delivered from a single facility, Main Campus (F-MAIN). No facility differential applies.",
+      "rules": [
+        {
+          "rule_id": "H1-C1-2-1",
+          "kind": "facility_scope",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "set_facility_multiplier",
+            "facility_name": "Main Campus",
+            "facility_code": "F-MAIN",
+            "multiplier": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number"
+            ]
+          },
+          "rule_order": {
+            "stage": "facility_multiplier",
+            "after": [],
+            "position": 2
+          },
+          "interpretation": "A single facility is named and no facility differential applies.",
+          "questions": [],
+          "also_source": [
+            "3.2"
+          ]
+        }
+      ]
+    },
+    "1.3": {
+      "section": "1",
+      "text": "1.3 All patient plan tiers (BRONZE, SILVER, GOLD) are reimbursed at the same rate under this Agreement.",
+      "rules": [
+        {
+          "rule_id": "H1-C1-3-1",
+          "kind": "plan_scope",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "plan_tier": [
+              "BRONZE",
+              "SILVER",
+              "GOLD"
+            ]
+          },
+          "action": {
+            "type": "set_plan_tier_multiplier",
+            "multiplier": {
+              "numerator": 1,
+              "denominator": 1
+            }
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number"
+            ]
+          },
+          "rule_order": {
+            "stage": "plan_tier_multiplier",
+            "after": [],
+            "position": 3
+          },
+          "interpretation": "All three named plan tiers use the same rate.",
+          "questions": [],
+          "also_source": [
+            "3.2"
+          ]
+        }
+      ]
+    },
+    "2.1": {
+      "section": "2",
+      "text": "2.1 \"Service Day\" means the calendar day recorded as the Service Date of the line item.",
+      "rules": [
+        {
+          "rule_id": "H1-C2-1-1",
+          "kind": "definition",
+          "applies_to": {
+            "entity": "service_date"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "define_service_day",
+            "value": "calendar_day_of_line_service_date"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "line_id"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Use the line service date as the service day, not the invoice date.",
+          "questions": [],
+          "also_source": []
+        }
+      ]
+    },
+    "2.2": {
+      "section": "2",
+      "text": "2.2 \"Business Day\" means any Service Day other than a Saturday or a Sunday.",
+      "rules": [
+        {
+          "rule_id": "H1-C2-2-1",
+          "kind": "definition",
+          "applies_to": {
+            "entity": "service_date"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "define_business_day",
+            "excluded_weekdays": [
+              "Saturday",
+              "Sunday"
+            ],
+            "public_holidays_excluded": false
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "service_date"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Only Saturdays and Sundays are excluded; public holidays are not an additional exclusion.",
+          "questions": [],
+          "also_source": [
+            "2.1"
+          ]
+        }
+      ]
+    },
+    "2.3": {
+      "section": "2",
+      "text": "2.3 \"Unit\" means one billable unit of the Service on the unit basis stated for that Service in Section 4.",
+      "rules": [
+        {
+          "rule_id": "H1-C2-3-1",
+          "kind": "definition",
+          "applies_to": {
+            "entity": "service_units"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "define_billable_unit",
+            "unit_basis_source": "Section 4"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "service"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Billable units follow the service catalogue, even when the service name suggests a different unit.",
+          "questions": [],
+          "also_source": []
+        }
+      ]
+    },
+    "2.4": {
+      "section": "2",
+      "text": "2.4 \"Cumulative utilisation\" means the running total of Units of a Service billed under this Agreement, counted in Service Date order, up to but excluding the line item being priced.",
+      "rules": [
+        {
+          "rule_id": "H1-C2-4-1",
+          "kind": "cumulative_counting",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "define_cumulative_utilisation",
+            "quantity": "billed_units",
+            "exclude_current_line": true,
+            "sort_by": [
+              "service_date ASC",
+              "line_id ASC"
+            ],
+            "identifier_comparison": null
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "service"
+            ],
+            "patients": "all",
+            "period": "whole_contract_term"
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Count prior billed units of this service across all patients and the whole contract term.",
+          "questions": [
+            "Ascending line identifier is specified, but lexical versus natural/numeric comparison is not defined.",
+            "The contract does not say whether to remove invalid or duplicate billed units from later cumulative totals."
+          ],
+          "also_source": [
+            "7.1",
+            "7.2"
+          ]
+        }
+      ]
+    },
+    "3.1": {
+      "section": "3",
+      "text": "3.1 All monetary amounts are expressed in whole cents. Where the application of a multiplier, premium or discount produces a fraction of a cent, the result shall be rounded to the nearest whole cent, with exact halves rounded away from zero (\"half up\"). Rounding is applied after each individual step of the calculation, not once at the end.",
+      "rules": [
+        {
+          "rule_id": "H1-C3-1-1",
+          "kind": "rounding",
+          "applies_to": {
+            "entity": "monetary_calculations"
+          },
+          "condition": {
+            "fractional_cent_result": true
+          },
+          "action": {
+            "type": "round",
+            "unit": "whole_cent",
+            "mode": "half_up",
+            "exact_halves": "away_from_zero",
+            "timing": "after_each_individual_step"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "calculation_step"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Use integer cents and exact arithmetic; round each step, with positive and negative halves away from zero.",
+          "questions": [],
+          "also_source": []
+        }
+      ]
+    },
+    "3.2": {
+      "section": "3",
+      "text": "3.2 Where more than one adjustment applies to the same Service, the adjustments shall be applied to the base rate strictly in the following order: (a) substitution of a bundled rate; (b) the facility multiplier; (c) the plan-tier multiplier; (d) any premium or uplift; and (e) any cumulative volume discount. The line total is then the resulting unit rate multiplied by the billed quantity.",
+      "rules": [
+        {
+          "rule_id": "H1-C3-2-1",
+          "kind": "adjustment_order",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "ordered_pipeline",
+            "stages": [
+              "bundle_substitution",
+              "facility_multiplier",
+              "plan_tier_multiplier",
+              "premium_or_uplift",
+              "cumulative_volume_discount",
+              "quantity_multiplication",
+              "invoice_summation"
+            ],
+            "rate_target": "unit_rate"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "line_id"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Substitute a bundled rate, apply facility then plan multipliers, premiums/uplifts, then the volume discount; multiply quantity and sum the invoice afterwards.",
+          "questions": [],
+          "also_source": [
+            "3.1",
+            "3.3"
+          ]
+        }
+      ]
+    },
+    "3.3": {
+      "section": "3",
+      "text": "3.3 The line total for a line item is the effective unit rate multiplied by the billed quantity. The invoice total is the sum of the line totals on that invoice.",
+      "rules": [
+        {
+          "rule_id": "H1-C3-3-1",
+          "kind": "line_calculation",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "multiply",
+            "operands": [
+              "effective_unit_rate_cents",
+              "billed_quantity"
+            ],
+            "result": "line_total_cents"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "line_id"
+            ]
+          },
+          "rule_order": {
+            "stage": "quantity_multiplication",
+            "after": [],
+            "position": 6
+          },
+          "interpretation": "The final effective unit rate is multiplied by billed quantity.",
+          "questions": [],
+          "also_source": [
+            "3.1",
+            "3.2"
+          ]
+        },
+        {
+          "rule_id": "H1-C3-3-2",
+          "kind": "invoice_calculation",
+          "applies_to": {
+            "entity": "invoices"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "sum",
+            "operand": "line_total_cents",
+            "result": "invoice_total_cents"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "invoice_id"
+            ]
+          },
+          "rule_order": {
+            "stage": "invoice_summation",
+            "after": [],
+            "position": 7
+          },
+          "interpretation": "The invoice total equals the sum of its line totals.",
+          "questions": [],
+          "also_source": [
+            "3.1"
+          ]
+        }
+      ]
+    },
+    "5.1": {
+      "section": "5",
+      "text": "5.1 A threshold premium is assessed against the aggregate quantity of that Service delivered to the Patient on the Service Day, not against the quantity on any one line item.",
+      "rules": [
+        {
+          "rule_id": "H1-C5-1-1",
+          "kind": "premium_grouping",
+          "applies_to": {
+            "entity": "threshold_premium_services"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "aggregate_quantity",
+            "metric": "aggregate_daily_quantity"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "patient_id",
+              "service_date",
+              "service"
+            ],
+            "across_invoices": true
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Combine matching service lines for the patient/day before checking the threshold, including lines on different invoices. Duplicate billing remains a separate restriction.",
+          "questions": [],
+          "also_source": [
+            "11.4"
+          ]
+        }
+      ]
+    },
+    "7.1": {
+      "section": "7",
+      "text": "7.1 Cumulative utilisation is counted cumulatively across the whole term of this Agreement and aggregated across all Patients.",
+      "rules": [
+        {
+          "rule_id": "H1-C7-1-1",
+          "kind": "discount_grouping",
+          "applies_to": {
+            "entity": "volume_discount_services"
+          },
+          "condition": {
+            "always": true
+          },
+          "action": {
+            "type": "aggregate_quantity",
+            "metric": "prior_cumulative_billed_units"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "service"
+            ],
+            "patients": "all",
+            "period": "whole_contract_term"
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Usage is shared across patients over the entire contract term; it does not reset per invoice, patient or year.",
+          "questions": [],
+          "also_source": [
+            "2.4",
+            "7.2"
+          ]
+        }
+      ]
+    },
+    "7.2": {
+      "section": "7",
+      "text": "7.2 Where two thresholds are met, the deeper discount applies. The discount applies to a line item where cumulative utilisation *prior to* that line item exceeds the threshold. Where two line items share a Service Date, they are counted in ascending order of line identifier.",
+      "rules": [
+        {
+          "rule_id": "H1-C7-2-1",
+          "kind": "discount_boundary",
+          "applies_to": {
+            "entity": "volume_discount_services"
+          },
+          "condition": {
+            "operator": ">",
+            "metric": "prior_cumulative_billed_units",
+            "exclude_current_line": true
+          },
+          "action": {
+            "type": "choose_discount",
+            "selection": "deepest_qualifying_discount",
+            "stack_tiers": false,
+            "split_current_line": false
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "service"
+            ]
+          },
+          "rule_order": {
+            "stage": "cumulative_volume_discount",
+            "after": [],
+            "position": 5
+          },
+          "interpretation": "At exactly the threshold, the discount is not due. A line that crosses it retains the rate based on prior usage; use the deepest eligible tier.",
+          "questions": [],
+          "also_source": [
+            "2.4",
+            "3.2"
+          ]
+        },
+        {
+          "rule_id": "H1-C7-2-2",
+          "kind": "line_ordering",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "same_service_date": true
+          },
+          "action": {
+            "type": "sort",
+            "keys": [
+              "service_date ASC",
+              "line_id ASC"
+            ],
+            "identifier_comparison": null
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "service"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Same-date lines are ordered by line identifier, not input order or invoice number.",
+          "questions": [
+            "Choose and document lexical or natural/numeric ordering before implementing the engine."
+          ],
+          "also_source": [
+            "2.4"
+          ]
+        }
+      ]
+    },
+    "9.1": {
+      "section": "9",
+      "text": "9.1 The bundled rates in this Section replace the standalone rates in Section 4 whenever both Services in a pair are delivered to the same Patient on the same Service Day. They are substituted before any multiplier, premium or discount is applied.",
+      "rules": [
+        {
+          "rule_id": "H1-C9-1-1",
+          "kind": "bundle_grouping",
+          "applies_to": {
+            "entity": "bundled_services"
+          },
+          "condition": {
+            "both_services_present": true,
+            "same_patient": true,
+            "same_service_day": true
+          },
+          "action": {
+            "type": "substitute_both_unit_rates",
+            "rates_source": "Section 9"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "patient_id",
+              "service_date"
+            ],
+            "across_invoices": true
+          },
+          "rule_order": {
+            "stage": "bundle_substitution",
+            "after": [],
+            "position": 1
+          },
+          "interpretation": "Bundle eligibility depends on the patient/day and service pair, with no same-invoice condition.",
+          "questions": [],
+          "also_source": [
+            "3.2"
+          ]
+        }
+      ]
+    },
+    "10.1": {
+      "section": "10",
+      "text": "10.1 An exclusion window is measured in either direction from the Service Date of the excluded Service.",
+      "rules": [
+        {
+          "rule_id": "H1-C10-1-1",
+          "kind": "exclusion_direction",
+          "applies_to": {
+            "entity": "excluded_services"
+          },
+          "condition": {
+            "related_service_present": true
+          },
+          "action": {
+            "type": "measure_window",
+            "distance": "absolute_calendar_day_difference",
+            "direction": "both"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number"
+            ]
+          },
+          "rule_order": {
+            "stage": null,
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Measure both before and after the excluded service date. Endpoint inclusion and patient scope remain unresolved in the exclusion rows.",
+          "questions": [],
+          "also_source": [
+            "2.1"
+          ]
+        }
+      ]
+    },
+    "11.1": {
+      "section": "11",
+      "text": "11.1 Each invoice shall quote the contract number stated above.",
+      "rules": [
+        {
+          "rule_id": "H1-C11-1-1",
+          "kind": "contract_number_restriction",
+          "applies_to": {
+            "entity": "invoices"
+          },
+          "condition": {
+            "metric": "invoice.contract_number",
+            "operator": "!=",
+            "expected_source": "preamble.Contract number"
+          },
+          "action": {
+            "type": "flag_contract_number_mismatch"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "invoice_id"
+            ]
+          },
+          "rule_order": {
+            "stage": "validation",
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Every invoice must quote this agreement number.",
+          "questions": [],
+          "also_source": []
+        }
+      ]
+    },
+    "11.2": {
+      "section": "11",
+      "text": "11.2 Each invoice shall carry a unique invoice identifier. An identifier may not be reused.",
+      "rules": [
+        {
+          "rule_id": "H1-C11-2-1",
+          "kind": "invoice_identifier_restriction",
+          "applies_to": {
+            "entity": "invoices"
+          },
+          "condition": {
+            "metric": "invoice_id_occurrences",
+            "operator": ">",
+            "value": 1
+          },
+          "action": {
+            "type": "flag_reused_invoice_identifier"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "invoice_id"
+            ]
+          },
+          "rule_order": {
+            "stage": "validation",
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Invoice identifiers may not be reused across invoice records; repeated invoice_id values in the line-item file are not invoice reuse.",
+          "questions": [],
+          "also_source": []
+        },
+        {
+          "rule_id": "H1-C11-2-2",
+          "kind": "invoice_identifier_presence",
+          "applies_to": {
+            "entity": "invoices"
+          },
+          "condition": {
+            "metric": "invoice_id",
+            "operator": "missing"
+          },
+          "action": {
+            "type": "flag_missing_invoice_identifier"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "invoice_record"
+            ]
+          },
+          "rule_order": {
+            "stage": "validation",
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Each invoice must carry an identifier.",
+          "questions": [],
+          "also_source": []
+        }
+      ]
+    },
+    "11.3": {
+      "section": "11",
+      "text": "11.3 Every Service Date must fall within the term stated in Section 1.1 and may not fall after the invoice date.",
+      "rules": [
+        {
+          "rule_id": "H1-C11-3-1",
+          "kind": "valid_service_dates",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "any": [
+              {
+                "metric": "service_date",
+                "operator": "<",
+                "reference": "contract.effective_from"
+              },
+              {
+                "metric": "service_date",
+                "operator": ">",
+                "reference": "contract.effective_to"
+              },
+              {
+                "metric": "service_date",
+                "operator": ">",
+                "reference": "invoice.invoice_date"
+              }
+            ]
+          },
+          "action": {
+            "type": "flag_invalid_service_date"
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "line_id"
+            ]
+          },
+          "rule_order": {
+            "stage": "validation",
+            "after": [],
+            "position": null
+          },
+          "interpretation": "Service dates must be within the term and no later than the invoice date; the invoice date itself is not required to be within the term. Treat the named term endpoints as inclusive.",
+          "questions": [],
+          "also_source": [
+            "1.1"
+          ],
+          "evidence_status": "interpretation"
+        }
+      ]
+    },
+    "11.4": {
+      "section": "11",
+      "text": "11.4 The same Service may not be billed twice for the same Patient and the same Service Date, whether on one invoice or across several.",
+      "rules": [
+        {
+          "rule_id": "H1-C11-4-1",
+          "kind": "duplicate_billing",
+          "applies_to": {
+            "entity": "service_lines"
+          },
+          "condition": {
+            "metric": "matching_line_count",
+            "operator": ">",
+            "value": 1
+          },
+          "action": {
+            "type": "flag_duplicate_service_billing",
+            "correction_policy": null
+          },
+          "rule_scope": {
+            "hospital_id": "hospital_1",
+            "group_by": [
+              "contract_number",
+              "patient_id",
+              "service_date",
+              "service"
+            ],
+            "across_invoices": true
+          },
+          "rule_order": {
+            "stage": "validation",
+            "after": [],
+            "position": null
+          },
+          "interpretation": "The same service cannot be billed twice for the same patient/date, including across invoices. A quantity greater than one alone is not a second billing.",
+          "questions": [
+            "Which line should be retained and what corrected invoice totals should be used when duplicates exist? The contract does not provide a retention policy."
+          ],
+          "also_source": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "labelled_invoices": 196,
+  "confusion": {
+    "correct_review": 91,
+    "correct_correct": 91,
+    "erroneous_erroneous": 12,
+    "erroneous_review": 2
+  },
+  "decision_coverage": {
+    "numerator": 103,
+    "denominator": 196,
+    "value": 0.5255102040816326
+  },
+  "known_error_precision": {
+    "numerator": 12,
+    "denominator": 12,
+    "value": 1.0
+  },
+  "known_error_recall_including_abstentions": {
+    "numerator": 12,
+    "denominator": 14,
+    "value": 0.8571428571428571
+  },
+  "accuracy_on_decided_invoices": {
+    "numerator": 103,
+    "denominator": 103,
+    "value": 1.0
+  },
+  "expected_amount_coverage": {
+    "numerator": 94,
+    "denominator": 196,
+    "value": 0.47959183673469385
+  },
+  "exact_expected_amount_accuracy_when_known": {
+    "numerator": 93,
+    "denominator": 94,
+    "value": 0.9893617021276596
+  },
+  "mean_absolute_error_cents_when_known": {
+    "numerator": 14775,
+    "denominator": 94
+  },
+  "per_label_category_invoice_detection": {
+    "bundle_not_applied": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0,
+      "known_expected_amounts": 1,
+      "exact_expected_amounts": 1
+    },
+    "contract_number_mismatch": {
+      "labelled_invoices": 2,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0,
+      "known_expected_amounts": 1,
+      "exact_expected_amounts": 1
+    },
+    "cross_invoice_duplicate": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "daily_cap_exceeded": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0,
+      "known_expected_amounts": 1,
+      "exact_expected_amounts": 0
+    },
+    "exclusion_window_violation": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "invoice_total_mismatch": {
+      "labelled_invoices": 2,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0,
+      "known_expected_amounts": 1,
+      "exact_expected_amounts": 1
+    },
+    "malformed_service_date": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "premium_incorrectly_applied": {
+      "labelled_invoices": 1,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0,
+      "known_expected_amounts": 1,
+      "exact_expected_amounts": 1
+    },
+    "service_date_after_invoice_date": {
+      "labelled_invoices": 2,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "service_date_out_of_window": {
+      "labelled_invoices": 3,
+      "known_error_detected": 3,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "unit_price_mismatch": {
+      "labelled_invoices": 2,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "unknown_service": {
+      "labelled_invoices": 2,
+      "known_error_detected": 1,
+      "sent_for_review_without_known_violation": 1,
+      "incorrectly_accepted": 0
+    },
+    "volume_discount_incorrectly_applied": {
+      "labelled_invoices": 2,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 0,
+      "incorrectly_accepted": 0
+    },
+    "wrong_unit_basis": {
+      "labelled_invoices": 3,
+      "known_error_detected": 2,
+      "sent_for_review_without_known_violation": 1,
+      "incorrectly_accepted": 0
+    }
+  },
+  "grouped_category_detection": {
+    "pricing": {
+      "true_positive": 4,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": {
+        "numerator": 4,
+        "denominator": 4,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 4,
+        "denominator": 5,
+        "value": 0.8
+      }
+    },
+    "arithmetic": {
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 2,
+        "denominator": 2,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "value": 1.0
+      }
+    },
+    "dates": {
+      "true_positive": 5,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 5,
+        "denominator": 5,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 5,
+        "denominator": 5,
+        "value": 1.0
+      }
+    },
+    "unit_basis": {
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 1,
+      "precision": {
+        "numerator": 2,
+        "denominator": 2,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 2,
+        "denominator": 3,
+        "value": 0.6666666666666666
+      }
+    },
+    "daily_caps": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      }
+    },
+    "duplicate_service": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      }
+    },
+    "duplicate_invoice_id": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      }
+    },
+    "exclusions": {
+      "true_positive": 1,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 1,
+        "denominator": 1,
+        "value": 1.0
+      }
+    },
+    "contract_identity": {
+      "true_positive": 2,
+      "false_positive": 0,
+      "false_negative": 0,
+      "precision": {
+        "numerator": 2,
+        "denominator": 2,
+        "value": 1.0
+      },
+      "recall": {
+        "numerator": 2,
+        "denominator": 2,
+        "value": 1.0
+      }
+    },
+    "uncontracted_service": {
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": {
+        "numerator": 0,
+        "denominator": 0,
+        "value": null
+      },
+      "recall": {
+        "numerator": 0,
+        "denominator": 2,
+        "value": 0.0
+      }
+    }
+  },
+  "uncertainty_reasons": {
+    "service_match_unresolved": 43,
+    "volume_discount_uncertain": 54,
+    "exclusion_presence_uncertain": 13,
+    "retention_or_payable_quantity_requires_review": 30,
+    "delivered_quantity_or_duplicate_identity_uncertain": 15,
+    "invalid_date_payability_requires_review": 5,
+    "contract_quantity_unknown_due_to_unit_mismatch": 2,
+    "premium_eligibility_uncertain": 1
+  },
+  "systematic_examples": {
+    "service_match_unresolved": [
+      "INV-H1-000001",
+      "INV-H1-000025"
+    ],
+    "volume_discount_uncertain": [
+      "INV-H1-000038",
+      "INV-H1-000041"
+    ],
+    "exclusion_presence_uncertain": [
+      "INV-H1-000045",
+      "INV-H1-000060"
+    ],
+    "retention_or_payable_quantity_requires_review": [
+      "INV-H1-000045",
+      "INV-H1-000060"
+    ],
+    "delivered_quantity_or_duplicate_identity_uncertain": [
+      "INV-H1-000148",
+      "INV-H1-000149"
+    ],
+    "invalid_date_payability_requires_review": [
+      "INV-H1-000148",
+      "INV-H1-000219"
+    ],
+    "contract_quantity_unknown_due_to_unit_mismatch": [
+      "INV-H1-000211",
+      "INV-H1-000635"
+    ],
+    "missed_known_error": [
+      {
+        "invoice_id": "INV-H1-000657",
+        "decision": "review",
+        "label_categories": [
+          "wrong_unit_basis"
+        ],
+        "violations": []
+      },
+      {
+        "invoice_id": "INV-H1-000667",
+        "decision": "review",
+        "label_categories": [
+          "unknown_service"
+        ],
+        "violations": []
+      }
+    ],
+    "premium_eligibility_uncertain": [
+      "INV-H1-000678"
+    ]
+  },
+  "amount_mismatch_examples": [
+    {
+      "invoice_id": "INV-H1-000015",
+      "calculated_cents": 1210600,
+      "label_cents": 1195825,
+      "categories": [
+        "daily_cap_exceeded"
+      ]
+    }
+  ],
+  "confidence_calibration": "Not measured; no numerical confidence scores are emitted.",
+  "split": "held_aside",
+  "labels_sha256": "79e7918337b7836d810b1164ec955684454dd7dcdd805ee7e0a7a980d14302b6",
+  "unlabelled_prediction_ids": [],
+  "missing_labelled_prediction_ids": []
+}

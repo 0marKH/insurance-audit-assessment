@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "expected_pattern": "^H[1-5]-L[0-9]{5}-[0-9]{2}$",
+  "total_csv_lines": 61211,
+  "total_jsonl_lines": 61211,
+  "global_lexical_matches_natural": true,
+  "hospitals": [
+    {
+      "hospital_id": "hospital_1",
+      "csv": {
+        "line_count": 11415,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "jsonl": {
+        "line_count": 11415,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "csv_jsonl_line_id_multisets_match": true
+    },
+    {
+      "hospital_id": "hospital_2",
+      "csv": {
+        "line_count": 14360,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "jsonl": {
+        "line_count": 14360,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "csv_jsonl_line_id_multisets_match": true
+    },
+    {
+      "hospital_id": "hospital_3",
+      "csv": {
+        "line_count": 11655,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "jsonl": {
+        "line_count": 11655,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "csv_jsonl_line_id_multisets_match": true
+    },
+    {
+      "hospital_id": "hospital_4",
+      "csv": {
+        "line_count": 10560,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "jsonl": {
+        "line_count": 10560,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "csv_jsonl_line_id_multisets_match": true
+    },
+    {
+      "hospital_id": "hospital_5",
+      "csv": {
+        "line_count": 13221,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "jsonl": {
+        "line_count": 13221,
+        "format_exceptions": [],
+        "duplicate_ids": [],
+        "lexical_matches_natural": true
+      },
+      "csv_jsonl_line_id_multisets_match": true
+    }
+  ],
+  "source_sha256": {
+    "hospital_1_line_items.csv": "ca3a1b8b14a3d8541aa3941563750a4f9447ffb972b730e3dd2e55c2523904cb",
+    "hospital_1_invoices.jsonl": "baf4975307b08ec9aa915f7bcd306e2d508362557a755ef8df9c891e0bcd2ac9",
+    "hospital_2_line_items.csv": "52af82b2b21c47308f0f8b28a229fc479c5b1e3b6c617795125eb301d6c026aa",
+    "hospital_2_invoices.jsonl": "3bab78680a8afcb6fb3182fa743df27599148aa76eb854a91b64ac5c495755b7",
+    "hospital_3_line_items.csv": "87d467cc96af406ad1636c76e426bf7d8bf7e99c098d59adeb139e2ec2d2bb90",
+    "hospital_3_invoices.jsonl": "931d80d10a6f967c9446d370d325f82e5056f50b138ceef7d8e53d3b27a4fb1e",
+    "hospital_4_line_items.csv": "c17a6b131bccb5885815ba8e61c110196a849bc49d154ace2d1d8acf6c43c18b",
+    "hospital_4_invoices.jsonl": "7051b0ee2a6e4d834c14820a3851efe9dd9a03616d3f8a0beab7190e928fc934",
+    "hospital_5_line_items.csv": "0fcdf6f2238e4700d4c600a5f465248ea2a35719e0835d50ff512614604dc6d0",
+    "hospital_5_invoices.jsonl": "080d1135ece4b350703fdca8a0d674c21269b8191020a2df3c386a07805144c4"
+  },
+  "exception_action": "Flag for review and revisit ordering only if exceptions appear; never silently switch comparison type."
+}

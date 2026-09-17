@@ -1,0 +1,17 @@
+{
+  "id": "hospital_5_final_v1",
+  "hospital_id": "hospital_5",
+  "sources_sha256": {
+    "data/assessment/contracts/hospital_5/network_reimbursement_agreement.md": "cbdd2f9c2bc3b31e6ba8f3ae1c4910e6e9aba79970df333500d886b0e5f83ffa"
+  },
+  "approval_prompt": "prompts/009_final_all_hospitals.md",
+  "volume_scope": "whole_term_all_patients_explicit; original billed history, prior line excluded, lexical ties",
+  "duplicate_correction": "withhold repeated service/patient/date group; no H1/H4 retention convention imported",
+  "cap_correction": "flag violation, withhold correction because actual quantity unestablished; H4 approval not transferred",
+  "exclusions": "same-patient cross-invoice candidate search; H2 both directions explicit, exact endpoints withheld; H3/H5 positive matches withheld pending scope/direction interpretation",
+  "unit_mismatches": "unresolved quantity; no price inference; dual unit unresolved",
+  "service_day": "calendar date explicit",
+  "facility": "invoice-header code supplies line context by explicit user approval",
+  "confidence": "unchanged exposed-H1 class heuristic; no validation/calibration on this hospital",
+  "administrative_limits": "No submission timestamps, settlement status, clinical records, notice/waiver records. Operational compliance not established."
+}

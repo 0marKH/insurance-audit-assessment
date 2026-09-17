@@ -1,0 +1,37 @@
+{
+  "implementation_sha256": {
+    "contract_extractor/__init__.py": "c32aea7687093c25bbd9bced4756e1beb63a8f8d71aa378c148dd603e68f78fa",
+    "contract_extractor/__main__.py": "a73cb7e1a6162098f00a7e6067c28dc168ec2a709032ed04f730dad2bd17f2bc",
+    "contract_extractor/extract.py": "b99d6a8280dd2bd32088e09bedceeea602f9f86da806e3c91fca151acc3fc808",
+    "contract_extractor/policies.py": "fa14602005cf1dee5860d3f2af633b262cffa7f91b38b09a8433afa569455eff",
+    "contract_extractor/report.py": "2883bcecec8aa10901ec5a0da93751b526534b20925e3d3775d4385fd5460739",
+    "contract_extractor/validate_line_ids.py": "6a825751a280402882feeecb1d96cbe9864a9c5373843952323f2c9d3c3e3e3f",
+    "hospital_audit/__init__.py": "2de4a6eb65e896663f5e2b25a153405befbc219cb24d74cdbc8873bdb4021bb1",
+    "hospital_audit/__main__.py": "815752ddf0f70ae2c57d257f6704965cd109b9ab5da0cb072a100d0bfc1143db",
+    "hospital_audit/data.py": "3d9b32e63fae3d4ee03f9f380d834f182b60de8cb6bd404a7c279e7e2b28ddd5",
+    "hospital_audit/engine.py": "4df246281476c1245372114f53f2cab6257fddec143bb50ea05654dd3d1b57c3",
+    "hospital_audit/evaluate.py": "9b68b2d3605615dc26b7dece200994f487a026d21d461ade73f7cd5820d0d68c",
+    "hospital_audit/matching.py": "ba7c16c9dd5df184739b3ee8899f50f8d48a6efc02e48c0d5b7c75c875837db1",
+    "outputs/hospital_1.rules.json": "5dbc58eb8654f9453b105902be24e2deb22544d2234d3f234d56f3fa0f6a0c48",
+    "policies/hospital_1.json": "e6917cdaf04638d49cedae5c578a86646b7d913952ef70613a4d4c8f6e3e34f7",
+    "policies/hospital_1_aliases.json": "5a8e045606755914a84811f6bad033c1769c7aa69f9b5c3e0093bf17421c04ac",
+    "profiles/hospital_1.json": "99d38f3f061de9788034956f9e24e9c4b560f8502835e738ddec6ba9b4ba08be",
+    "tests/test_engine.py": "d49f0177cadd7116db2f701a6493ab9cdc09439935800e69454f0350ab57d343",
+    "tests/test_evaluation.py": "274553a88a4c2f9a7c0d1fe192ae113f2ab25b22c1e40d767c011b1378e6d517",
+    "tests/test_extractor.py": "1054c96fe33138f62e821e7a8177e15d4ca57b7ab2dabcfce18ad84d9be17e66",
+    "tests/test_policies.py": "388ec398f85ebfce1fe46918b3a09dfe0dd1a59e080283a5a645bce1112dbbac"
+  },
+  "input_sha256": {
+    "data/assessment/invoices/hospital_1_invoices.csv": "2943c887c5f4c1e81c01893ff54f0cbac770451259d180040fec45924ee37b5f",
+    "data/assessment/invoices/hospital_1_line_items.csv": "ca3a1b8b14a3d8541aa3941563750a4f9447ffb972b730e3dd2e55c2523904cb"
+  },
+  "artifact_sha256": {
+    "line_audit.jsonl": "c76a26cd8639dbd35f5848b725107f5a233e55683acee959cefca974addf2b03",
+    "invoice_audit.jsonl": "be32bb36f3a8a115e95c39ad598b5b8c663252e197b305f59b618b7408065b1f",
+    "summary.json": "84f08233a511d28b2f96ba05fb43c6818325d75e4413826540eb3570a44e093a",
+    "review_log.jsonl": "19d21bc22b8ef9302a43fa1c71a913476c32e6e5f7f79fabd3df457c2d3612f2",
+    "invoice_audit.csv": "0bd6c4143d8c088e475138b0dbe927ac319d23db16b0c3e829f20390c957638f"
+  },
+  "labels_used_by_engine": false,
+  "split": "sha256(invoice_id).first_8_hex_as_integer % 5 == 0 => held_aside; otherwise development"
+}
