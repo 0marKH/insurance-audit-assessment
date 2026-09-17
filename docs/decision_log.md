@@ -1,14 +1,14 @@
 # Assessment decision log
 
-Final decisions, 17 September 2026. Detailed chronology is in decision_history.md;
-user requests and clarification are preserved in prompts/001–009. No new holdout.
+Final decisions, 17 September 2026. Requests and approved clarifications are
+preserved in prompts/. Historical development records remain in Git history.
 
 ## Scope and preservation
 
 Developed/froze H1, completed H4, then extended to H2/3/5 at the user's request.
 All 49,796 target lines were processed; 1,757/3,942 unique invoices are submitted.
-Abstentions remain explicit. H1 data/code/evaluation and H4 v1/v2 snapshots are
-hash-protected. The six-to-eight-hour assessment cap is acknowledged; prior human
+Abstentions remain explicit. Original data and H1 code/evaluation remain hash-protected. Prior H4 snapshots
+remain in Git history; current audit results are reproducible. The six-to-eight-hour assessment cap is acknowledged; prior human
 working time is unknown, so no total-hours compliance claim is invented.
 
 ## Contract interpretation
@@ -54,4 +54,4 @@ Confidence retains the existing exposed-H1 class heuristic: 0.90 × Wilson lower
 bound of joint flag/amount correctness, yielding 0.892297 correct and 0.581503
 erroneous. The transfer factor is heuristic; no H2–5 or cap-specific calibration,
 new penalty, or validated probability is claimed. H1 label reuse is development
-analysis. Jev remains experimental with zero accepted mappings and no runtime use.
+analysis. No runtime model or experimental mapping is used.

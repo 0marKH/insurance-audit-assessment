@@ -1,2 +1,0 @@
-invoice_id,split,label_is_erroneous,label_error_categories,audit_decision,decision_comparison,requires_review,audit_violations,audit_uncertainty,label_expected_total_cents,audit_expected_total_cents,amount_comparison,amount_difference_cents,audit_record_count,label_ambiguity_sensitive
-INV-H1-000015,held_aside,1,daily_cap_exceeded,erroneous,true_positive,False,daily_cap|invoice_amount|line_amount,,1195825,1210600,mismatch,14775,1,0

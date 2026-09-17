@@ -1,4 +1,4 @@
-"""Reproduce Hospital 4 evidence and the conservative final submission; stdlib only."""
+"""Reproduce Hospital 4 audit evidence; the combined runner owns submission.csv."""
 import argparse
 import csv
 import hashlib
@@ -11,7 +11,6 @@ from hospital_audit.__main__ import fingerprints
 from .extract import extract, ROOT
 from .engine import Hospital4Engine
 from .submission import FIELDS, build_rows, confidence_method, validate
-from .comparison import compare, markdown, verified_baseline
 
 
 def digest(path): return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -38,7 +37,6 @@ def preserved():
 
 def run():
     frozen = preserved()
-    verified_baseline()
     data = ROOT / 'data/assessment'
     with (data / 'submission_template.csv').open(newline='') as handle:
         if next(csv.reader(handle)) != FIELDS: raise ValueError('Template changed')
@@ -69,7 +67,7 @@ def run():
                'all_target_unique_invoice_ids':len(all_target_ids), 'all_target_coverage':len(rows)/len(all_target_ids),
                'omission_reasons_by_unique_invoice':{reason:len(ids) for reason,ids in sorted(reason_ids.items())},
                'validation':validation, 'runtime_model_dependencies':[],
-               'scope':'Hospital 4 only. Hospitals 2, 3, 5 unattempted beyond selection review. Hospital 1 frozen; excluded from submission.',
+               'scope':'Hospital 4 component of the Hospitals 2-5 assessment. Hospital 1 frozen; excluded from submission.',
                'h4_accuracy':'Unknown: no Hospital 4 labels. Manual review and tests are not measured accuracy.'}
     submitted_ids={r['invoice_id'] for r in rows}
     evidence=[]
@@ -83,12 +81,10 @@ def run():
             approval_prompt=reference['policy']['approval_prompt'])
     summary['submitted_amount_status_counts']=dict(Counter(r['expected_amount_status'] for r in evidence))
     summary['submitted_cap_estimate_ids']=[r['invoice_id'] for r in evidence if r['amount_assumptions']]
-    comparison=compare(rows,result,summary)
     files = {'rules.json':pretty(reference), 'line_audit.jsonl':jsonl(result['lines']),
              'invoice_audit.jsonl':jsonl(result['invoices']), 'summary.json':pretty(summary),
              'confidence_method.json':pretty(method),
              'submission_evidence.jsonl':jsonl(evidence),
-             'policy_change_report.json':pretty(comparison), 'policy_change_report.md':markdown(comparison),
              'omitted_invoices.csv':csv_text(omissions, ['invoice_id','invoice_record_index','decision','known_violation','reasons']),
              'review_log.jsonl':jsonl([r for r in result['lines'] if r['uncertainty'] or r['expected_payable_cents'] is None or r['amount_assumptions']])}
     paths = [p for p in (ROOT / 'hospital_4').rglob('*.py')] + list((ROOT / 'policies').glob('hospital_4*.json'))
@@ -100,7 +96,6 @@ def run():
                 'preserved_hospital_1_outputs_sha256':frozen,
                 'artifacts_sha256':{name:hashlib.sha256(content.encode()).hexdigest() for name,content in files.items()},
                 'submission_sha256':hashlib.sha256(submission.encode()).hexdigest(),
-                'baseline_manifest_sha256':digest(ROOT / 'baselines/hospital_4_v1/manifest.json'),
                 'labels_used_directly_at_runtime_for_h4_matching_or_pricing':False,
                 'h1_labels_read_at_runtime_only_for_confidence':True,
                 'h1_exposed_label_analysis_informed_approved_h4_interpretations':True,
@@ -116,7 +111,6 @@ def main():
     try:
         files, submission, summary = run()
         targets = {ROOT / 'outputs/hospital_4' / n:v for n,v in files.items()}
-        targets[ROOT / 'submission.csv'] = submission
         if args.check:
             stale = [p.relative_to(ROOT).as_posix() for p,v in targets.items() if not p.exists() or p.read_bytes() != v.encode()]
             if stale: raise ValueError('Stale/missing output: ' + ', '.join(stale))

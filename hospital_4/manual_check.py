@@ -1,4 +1,4 @@
-"""Replay independently written expectations from docs/hospital_4_manual_review.md."""
+"""Replay independently reviewed Hospital 4 calculations against saved audit output."""
 import json
 from datetime import date
 from .extract import ROOT

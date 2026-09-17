@@ -48,7 +48,7 @@
     ]
   },
   "runtime_model_dependencies": [],
-  "scope": "Hospital 4 only. Hospitals 2, 3, 5 unattempted beyond selection review. Hospital 1 frozen; excluded from submission.",
+  "scope": "Hospital 4 component of the Hospitals 2-5 assessment. Hospital 1 frozen; excluded from submission.",
   "h4_accuracy": "Unknown: no Hospital 4 labels. Manual review and tests are not measured accuracy.",
   "submitted_amount_status_counts": {
     "determined_under_reviewed_policies": 371,
