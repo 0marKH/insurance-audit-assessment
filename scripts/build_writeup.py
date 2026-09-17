@@ -7,7 +7,7 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / 'output/pdf/assessment_writeup.pdf'
+OUT = ROOT / 'deliverables/assessment_writeup.pdf'
 INK = colors.HexColor('#152B3A')
 STYLES = {
     'title':ParagraphStyle('title',fontName='Helvetica-Bold',fontSize=17,leading=20,textColor=INK,spaceAfter=8),
@@ -29,7 +29,7 @@ def footer(canvas, document):
 
 
 def build(source=None, output=None):
-    text=(source or ROOT/'docs/assessment_writeup.md').read_text()
+    text=(source or ROOT/'deliverables/assessment_writeup.md').read_text()
     out=output or OUT
     story=[]
     for page_no,page in enumerate(text.split('<!-- pagebreak -->')):
