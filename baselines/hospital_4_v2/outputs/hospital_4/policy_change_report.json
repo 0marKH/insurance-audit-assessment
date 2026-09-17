@@ -1,0 +1,1057 @@
+{
+  "baseline": "baselines/hospital_4_v1",
+  "baseline_files_verified": 25,
+  "before": {
+    "submission_rows": 370,
+    "submitted_correct": 361,
+    "submitted_erroneous": 9,
+    "omitted_unique_invoice_ids": 465,
+    "unique_id_coverage": 0.4431137724550898
+  },
+  "after": {
+    "submission_rows": 374,
+    "submitted_correct": 364,
+    "submitted_erroneous": 10,
+    "omitted_unique_invoice_ids": 461,
+    "unique_id_coverage": 0.4479041916167665
+  },
+  "added_rows": [
+    {
+      "row": {
+        "invoice_id": "INV-H4-000018",
+        "flagged": "0",
+        "error_category": "",
+        "expected_total_cents": "1493475",
+        "billed_total_cents": "1493475",
+        "confidence": "0.892297"
+      },
+      "evidence": [
+        {
+          "line_id": "H4-L00018-07",
+          "invoice_id": "INV-H4-000018",
+          "source_clauses": [
+            "1.3",
+            "11.3",
+            "2.2",
+            "3",
+            "3.1",
+            "4.1",
+            "4.2",
+            "4.4"
+          ],
+          "changes": {
+            "expected_payable_cents": {
+              "before": null,
+              "after": 143000
+            },
+            "uncertainty": {
+              "before": [
+                "hospital_4_duplicate_correction_unspecified"
+              ],
+              "after": []
+            },
+            "violations": {
+              "before": [
+                "duplicate_billing"
+              ],
+              "after": []
+            }
+          },
+          "duplicate_resolution": {
+            "policy": "exact_copy_lexical_retention",
+            "approval": "prompts/008_hospital_4_approved_policy_update.md",
+            "group_line_ids": [
+              "H4-L00018-07",
+              "H4-L00693-16"
+            ],
+            "retained_line_id": "H4-L00018-07",
+            "all_copies_independently_excluded": false
+          },
+          "exclusion": null
+        }
+      ]
+    },
+    {
+      "row": {
+        "invoice_id": "INV-H4-000069",
+        "flagged": "0",
+        "error_category": "",
+        "expected_total_cents": "3522700",
+        "billed_total_cents": "3522700",
+        "confidence": "0.892297"
+      },
+      "evidence": [
+        {
+          "line_id": "H4-L00069-13",
+          "invoice_id": "INV-H4-000069",
+          "source_clauses": [
+            "1.3",
+            "11.3",
+            "2.2",
+            "3",
+            "3.1",
+            "4.1",
+            "4.2",
+            "4.4"
+          ],
+          "changes": {
+            "expected_payable_cents": {
+              "before": null,
+              "after": 813875
+            },
+            "uncertainty": {
+              "before": [
+                "hospital_4_duplicate_correction_unspecified"
+              ],
+              "after": []
+            },
+            "violations": {
+              "before": [
+                "duplicate_billing"
+              ],
+              "after": []
+            }
+          },
+          "duplicate_resolution": {
+            "policy": "exact_copy_lexical_retention",
+            "approval": "prompts/008_hospital_4_approved_policy_update.md",
+            "group_line_ids": [
+              "H4-L00069-13",
+              "H4-L00309-14"
+            ],
+            "retained_line_id": "H4-L00069-13",
+            "all_copies_independently_excluded": false
+          },
+          "exclusion": null
+        }
+      ]
+    },
+    {
+      "row": {
+        "invoice_id": "INV-H4-000084",
+        "flagged": "0",
+        "error_category": "",
+        "expected_total_cents": "4715550",
+        "billed_total_cents": "4715550",
+        "confidence": "0.892297"
+      },
+      "evidence": [
+        {
+          "line_id": "H4-L00084-02",
+          "invoice_id": "INV-H4-000084",
+          "source_clauses": [
+            "1.3",
+            "11.3",
+            "2.2",
+            "3",
+            "3.1",
+            "4.1",
+            "4.2",
+            "4.4"
+          ],
+          "changes": {
+            "expected_payable_cents": {
+              "before": null,
+              "after": 731350
+            },
+            "uncertainty": {
+              "before": [
+                "hospital_4_duplicate_correction_unspecified"
+              ],
+              "after": []
+            },
+            "violations": {
+              "before": [
+                "duplicate_billing"
+              ],
+              "after": []
+            }
+          },
+          "duplicate_resolution": {
+            "policy": "exact_copy_lexical_retention",
+            "approval": "prompts/008_hospital_4_approved_policy_update.md",
+            "group_line_ids": [
+              "H4-L00084-02",
+              "H4-L00473-07"
+            ],
+            "retained_line_id": "H4-L00084-02",
+            "all_copies_independently_excluded": false
+          },
+          "exclusion": null
+        }
+      ]
+    },
+    {
+      "row": {
+        "invoice_id": "INV-H4-000235",
+        "flagged": "1",
+        "error_category": "contract_number|exclusion_window|invoice_amount|line_amount",
+        "expected_total_cents": "1518150",
+        "billed_total_cents": "1538350",
+        "confidence": "0.581503"
+      },
+      "evidence": [
+        {
+          "line_id": "H4-L00235-06",
+          "invoice_id": "INV-H4-000235",
+          "source_clauses": [
+            "1.3",
+            "11.1",
+            "2.2",
+            "3",
+            "3.1",
+            "4.1",
+            "4.2",
+            "4.4",
+            "9",
+            "9.1"
+          ],
+          "changes": {
+            "expected_payable_cents": {
+              "before": null,
+              "after": 0
+            },
+            "uncertainty": {
+              "before": [
+                "exclusion_presence_uncertain",
+                "retention_or_payable_quantity_requires_review"
+              ],
+              "after": []
+            },
+            "violations": {
+              "before": [
+                "contract_number"
+              ],
+              "after": [
+                "contract_number",
+                "exclusion_window",
+                "line_amount"
+              ]
+            }
+          },
+          "duplicate_resolution": null,
+          "exclusion": {
+            "applies": true,
+            "related_record_keys": [
+              "row-2919"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "removed_rows": [],
+  "changed_existing_rows": [],
+  "changed_invoice_evidence": [
+    {
+      "invoice_id": "INV-H4-000018",
+      "invoice_record_index": 18,
+      "changes": {
+        "expected_total_cents": {
+          "before": null,
+          "after": 1493475
+        },
+        "decision": {
+          "before": "erroneous",
+          "after": "correct"
+        },
+        "requires_review": {
+          "before": true,
+          "after": false
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000069",
+      "invoice_record_index": 69,
+      "changes": {
+        "expected_total_cents": {
+          "before": null,
+          "after": 3522700
+        },
+        "decision": {
+          "before": "erroneous",
+          "after": "correct"
+        },
+        "requires_review": {
+          "before": true,
+          "after": false
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000084",
+      "invoice_record_index": 84,
+      "changes": {
+        "expected_total_cents": {
+          "before": null,
+          "after": 4715550
+        },
+        "decision": {
+          "before": "erroneous",
+          "after": "correct"
+        },
+        "requires_review": {
+          "before": true,
+          "after": false
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000168",
+      "invoice_record_index": 168,
+      "changes": {
+        "violations": {
+          "before": [
+            "unit_basis"
+          ],
+          "after": [
+            "exclusion_window",
+            "line_amount",
+            "unit_basis"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "exclusion_presence_uncertain",
+            "premium_eligibility_uncertain",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ],
+          "after": [
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "premium_eligibility_uncertain",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ]
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000235",
+      "invoice_record_index": 235,
+      "changes": {
+        "expected_total_cents": {
+          "before": null,
+          "after": 1518150
+        },
+        "requires_review": {
+          "before": true,
+          "after": false
+        },
+        "violations": {
+          "before": [
+            "contract_number"
+          ],
+          "after": [
+            "contract_number",
+            "exclusion_window",
+            "invoice_amount",
+            "line_amount"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": []
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000309",
+      "invoice_record_index": 309,
+      "changes": {
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": [
+            "duplicate_billing",
+            "line_amount"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "bundle_eligibility_uncertain",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "exclusion_presence_uncertain",
+            "hospital_4_duplicate_correction_unspecified",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved",
+            "volume_discount_uncertain"
+          ],
+          "after": [
+            "bundle_eligibility_uncertain",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved",
+            "volume_discount_uncertain"
+          ]
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000473",
+      "invoice_record_index": 473,
+      "changes": {
+        "violations": {
+          "before": [
+            "duplicate_billing",
+            "unit_basis"
+          ],
+          "after": [
+            "duplicate_billing",
+            "exclusion_window",
+            "line_amount",
+            "unit_basis"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "exclusion_presence_uncertain",
+            "hospital_4_duplicate_correction_unspecified",
+            "premium_eligibility_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": [
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "premium_eligibility_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ]
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000658",
+      "invoice_record_index": 658,
+      "changes": {
+        "violations": {
+          "before": [
+            "line_amount",
+            "unit_basis",
+            "unit_price"
+          ],
+          "after": [
+            "exclusion_window",
+            "line_amount",
+            "unit_basis",
+            "unit_price"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "bundle_eligibility_uncertain",
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "exclusion_presence_uncertain",
+            "hospital_4_contractual_unit_unresolved",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ],
+          "after": [
+            "bundle_eligibility_uncertain",
+            "contract_quantity_unknown_due_to_unit_mismatch",
+            "delivered_quantity_or_duplicate_identity_uncertain",
+            "hospital_4_contractual_unit_unresolved",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ]
+        }
+      }
+    },
+    {
+      "invoice_id": "INV-H4-000693",
+      "invoice_record_index": 693,
+      "changes": {
+        "violations": {
+          "before": [
+            "duplicate_billing",
+            "service_date"
+          ],
+          "after": [
+            "duplicate_billing",
+            "line_amount",
+            "service_date"
+          ]
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_contractual_unit_unresolved",
+            "hospital_4_duplicate_correction_unspecified",
+            "invalid_date_payability_requires_review",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ],
+          "after": [
+            "hospital_4_contractual_unit_unresolved",
+            "invalid_date_payability_requires_review",
+            "retention_or_payable_quantity_requires_review",
+            "service_match_unresolved"
+          ]
+        }
+      }
+    }
+  ],
+  "changed_line_evidence": [
+    {
+      "line_id": "H4-L00018-07",
+      "invoice_id": "INV-H4-000018",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 143000
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00018-07",
+          "H4-L00693-16"
+        ],
+        "retained_line_id": "H4-L00018-07",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    },
+    {
+      "line_id": "H4-L00069-13",
+      "invoice_id": "INV-H4-000069",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 813875
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00069-13",
+          "H4-L00309-14"
+        ],
+        "retained_line_id": "H4-L00069-13",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    },
+    {
+      "line_id": "H4-L00084-02",
+      "invoice_id": "INV-H4-000084",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 731350
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": []
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00084-02",
+          "H4-L00473-07"
+        ],
+        "retained_line_id": "H4-L00084-02",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    },
+    {
+      "line_id": "H4-L00168-14",
+      "invoice_id": "INV-H4-000168",
+      "source_clauses": [
+        "1.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4",
+        "9",
+        "9.1"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [],
+          "after": [
+            "exclusion_window",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": null,
+      "exclusion": {
+        "applies": true,
+        "related_record_keys": [
+          "row-2031"
+        ]
+      }
+    },
+    {
+      "line_id": "H4-L00235-06",
+      "invoice_id": "INV-H4-000235",
+      "source_clauses": [
+        "1.3",
+        "11.1",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4",
+        "9",
+        "9.1"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "contract_number"
+          ],
+          "after": [
+            "contract_number",
+            "exclusion_window",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": null,
+      "exclusion": {
+        "applies": true,
+        "related_record_keys": [
+          "row-2919"
+        ]
+      }
+    },
+    {
+      "line_id": "H4-L00309-14",
+      "invoice_id": "INV-H4-000309",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": [
+            "duplicate_billing",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00069-13",
+          "H4-L00309-14"
+        ],
+        "retained_line_id": "H4-L00069-13",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    },
+    {
+      "line_id": "H4-L00473-07",
+      "invoice_id": "INV-H4-000473",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": [
+            "duplicate_billing",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00084-02",
+          "H4-L00473-07"
+        ],
+        "retained_line_id": "H4-L00084-02",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    },
+    {
+      "line_id": "H4-L00473-08",
+      "invoice_id": "INV-H4-000473",
+      "source_clauses": [
+        "1.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4",
+        "9",
+        "9.1"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [],
+          "after": [
+            "exclusion_window",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": null,
+      "exclusion": {
+        "applies": true,
+        "related_record_keys": [
+          "row-1087"
+        ]
+      }
+    },
+    {
+      "line_id": "H4-L00658-19",
+      "invoice_id": "INV-H4-000658",
+      "source_clauses": [
+        "1.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4",
+        "9",
+        "9.1"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "exclusion_presence_uncertain",
+            "retention_or_payable_quantity_requires_review"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [],
+          "after": [
+            "exclusion_window",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": null,
+      "exclusion": {
+        "applies": true,
+        "related_record_keys": [
+          "row-2680"
+        ]
+      }
+    },
+    {
+      "line_id": "H4-L00693-16",
+      "invoice_id": "INV-H4-000693",
+      "source_clauses": [
+        "1.3",
+        "11.3",
+        "2.2",
+        "3",
+        "3.1",
+        "4.1",
+        "4.2",
+        "4.4"
+      ],
+      "changes": {
+        "expected_payable_cents": {
+          "before": null,
+          "after": 0
+        },
+        "uncertainty": {
+          "before": [
+            "hospital_4_duplicate_correction_unspecified"
+          ],
+          "after": []
+        },
+        "violations": {
+          "before": [
+            "duplicate_billing"
+          ],
+          "after": [
+            "duplicate_billing",
+            "line_amount"
+          ]
+        }
+      },
+      "duplicate_resolution": {
+        "policy": "exact_copy_lexical_retention",
+        "approval": "prompts/008_hospital_4_approved_policy_update.md",
+        "group_line_ids": [
+          "H4-L00018-07",
+          "H4-L00693-16"
+        ],
+        "retained_line_id": "H4-L00018-07",
+        "all_copies_independently_excluded": false
+      },
+      "exclusion": null
+    }
+  ],
+  "submitted_cap_estimates": [
+    {
+      "invoice_id": "INV-H4-000165",
+      "expected_total_cents": 3370925,
+      "line_ids": [
+        "H4-L00165-05"
+      ],
+      "amount_assumptions": [
+        "cap_quantity_is_reimbursable_estimate"
+      ],
+      "confirmed_violations": [
+        "daily_cap"
+      ],
+      "amount_dependent_violations": [
+        "invoice_amount",
+        "line_amount"
+      ],
+      "confidence": "0.581503"
+    },
+    {
+      "invoice_id": "INV-H4-000540",
+      "expected_total_cents": 2120125,
+      "line_ids": [
+        "H4-L00540-02"
+      ],
+      "amount_assumptions": [
+        "cap_quantity_is_reimbursable_estimate"
+      ],
+      "confirmed_violations": [
+        "contract_number",
+        "daily_cap"
+      ],
+      "amount_dependent_violations": [
+        "invoice_amount",
+        "line_amount"
+      ],
+      "confidence": "0.581503"
+    },
+    {
+      "invoice_id": "INV-H4-000554",
+      "expected_total_cents": 3465160,
+      "line_ids": [
+        "H4-L00554-08"
+      ],
+      "amount_assumptions": [
+        "cap_quantity_is_reimbursable_estimate"
+      ],
+      "confirmed_violations": [
+        "daily_cap",
+        "invoice_arithmetic"
+      ],
+      "amount_dependent_violations": [
+        "invoice_amount",
+        "line_amount"
+      ],
+      "confidence": "0.581503"
+    }
+  ],
+  "remaining_omission_reasons": {
+    "bundle_eligibility_uncertain": 45,
+    "contract_quantity_unknown_due_to_unit_mismatch": 11,
+    "delivered_quantity_or_duplicate_identity_uncertain": 59,
+    "exclusion_presence_uncertain": 46,
+    "expected_total_unknown": 461,
+    "hospital_4_contractual_unit_unresolved": 100,
+    "invalid_date_payability_requires_review": 20,
+    "invoice_identifier_join_ambiguous": 5,
+    "missing_or_ambiguous_invoice_join": 5,
+    "missing_patient_context": 5,
+    "nonunique_invoice_id": 5,
+    "premium_eligibility_uncertain": 19,
+    "retention_or_payable_quantity_requires_review": 96,
+    "service_match_unresolved": 253,
+    "volume_discount_uncertain": 258
+  },
+  "interpretation": "Approved H4 policies; no H4 label validation. H1 evidence uses already-exposed development analysis. No confidence penalty or matching change."
+}

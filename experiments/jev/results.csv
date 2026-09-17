@@ -1,0 +1,36 @@
+cohort,request_id,description,line_count,reviewed_target,model_choice,proposed_service,confidence,top_probability,top_two_margin,probability_sum,review_agreement,specific_service_proposed,model,input_tokens,output_tokens,elapsed_seconds
+unresolved,9e61db74188f6441,ADMIN spclst NEURO anaes /CW-6871,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.66,0.68,0.54,0.99,False,False,jev-1.13.0,3748,1025,1.2462
+unresolved,a9c32873e0b3487c,AMB haem ENDOSC proc /CW-9607,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.43,0.44,0.07,1.0,False,False,jev-1.13.0,3745,1025,1.1337
+unresolved,240eabe691fd8ea5,ASST - obstetric TRANSP svc /CW-7850,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.48,0.49,0.23,1.0,False,False,jev-1.13.0,3747,1025,1.2324
+unresolved,031e79fc7d1297cd,BEDS - oncology TRANSF /CW-9855,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.42,0.44,0.22,0.99,False,False,jev-1.13.0,3747,1025,1.1656
+unresolved,5663580092656e73,CARDIAC physio SESS /CW-4455,24,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,,0.72,0.74,0.63,1.0,True,False,jev-1.13.0,3746,1025,1.9045
+unresolved,5fc83aeea720299e,CONF ger CS,15,INSUFFICIENT_INFORMATION,S051,Intensive Geriatric Case Conference,0.64,0.66,0.43,1.0,False,True,jev-1.13.0,3742,1024,1.101
+unresolved,76c62757cfe51dd4,CONSULT rtn NEURO /CW-8916,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.8,0.81,0.73,0.99,False,False,jev-1.13.0,3745,1025,1.0608
+unresolved,e0103228964a15a5,INTENS  neurological DIAG img /CW-9312,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.84,0.85,0.79,1.0,False,False,jev-1.13.0,3746,1025,1.201
+unresolved,b01b9e3b972a66fb,LAB  - emer DERM /CW-2124,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.68,0.6900000000000001,0.41,0.99,False,False,jev-1.13.0,3745,1025,1.3302
+unresolved,a5d1d5400f722811,OBS - gi NURS /CW-2992,19,INSUFFICIENT_INFORMATION,S093,Supervised Gastrointestinal Nursing Observation,0.36,0.38,0.04,1.0,False,True,jev-1.13.0,3744,1024,1.2165
+unresolved,6038f08bc2aab86b,OUTPT metabolic PHARM disp,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.6,0.61,0.27,1.0,False,False,jev-1.13.0,3745,1025,1.4512
+unresolved,2fbf1d2c91a0330e,PLNG cont OTOLARYNGOLOGIC disch,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.41,0.43,0.15,1.0,False,False,jev-1.13.0,3751,1025,1.3783
+unresolved,e6a2425643a8ccd5,RHEUM rehabilitation PROGRAMME /CW-4700,24,INSUFFICIENT_INFORMATION,S014,Ambulatory Rheumatologic Rehabilitation Programme,0.47,0.48,0.07,1.0,False,True,jev-1.13.0,3746,1024,1.2464
+unresolved,87557dfa3b590f3a,RTN - ortho TRANSF service /CW-3818,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.4,0.42,0.22,0.99,False,False,jev-1.13.0,3748,1025,1.3248
+unresolved,907ecc6c223eab20,SPCLST wnd CR /CW-6542,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.68,0.6900000000000001,0.48,0.99,False,False,jev-1.13.0,3744,1025,1.0945
+unresolved,4f90785812c2a3be,SVC - ortho STERILISATION,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.47,0.48,0.23,1.0,False,False,jev-1.13.0,3750,1025,1.1723
+unresolved,60df28ca3e24124b,VST  foc NEURO /CW-8682,1,NONE_OF_CATALOGUE,INSUFFICIENT_INFORMATION,,0.86,0.87,0.8,1.0,False,False,jev-1.13.0,3746,1025,1.1241
+unresolved,6020b1d5a2c69069,amb WD bed OCC /CW-2964,17,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,,0.52,0.53,0.11,1.0,True,False,jev-1.13.0,3743,1025,1.0852
+unresolved,453062271c4a808e,card  - HOME vst,16,INSUFFICIENT_INFORMATION,S082,Routine Cardiac Home Visit,0.44,0.45,0.14,1.0,False,True,jev-1.13.0,3744,1024,1.2051
+unresolved,c577987d00cb7b6e,card VENT support,17,INSUFFICIENT_INFORMATION,S083,Specialist Cardiac Ventilation Support,0.44,0.46,0.19,1.0,False,True,jev-1.13.0,3743,1024,1.152
+unresolved,7ba245e453c0f00d,ger - CASE conf,20,INSUFFICIENT_INFORMATION,INSUFFICIENT_INFORMATION,,0.55,0.5700000000000001,0.25,0.99,True,False,jev-1.13.0,3743,1025,1.0562
+unresolved,ee0640c46fb0ffc2,hep - DISCHARGE plng /CW-2290,11,INSUFFICIENT_INFORMATION,S085,Specialist Hepatic Discharge Planning,0.68,0.68,0.49,0.99,False,True,jev-1.13.0,3746,1024,1.1851
+unresolved,912d9939bcfe96de,occupancy ONC wd BD,18,INSUFFICIENT_INFORMATION,S088,Standard Oncology Ward Bed Occupancy,0.73,0.75,0.58,1.0,False,True,jev-1.13.0,3746,1024,1.1764
+positive_control,control-4f8a5488354882f1,EMERGENCY - card PHYSIOTHERAPY sess,1,S035,S035,Emergency Cardiac Physiotherapy Session,0.96,0.97,0.94,1.0,True,True,jev-1.13.0,3753,1024,1.1581
+positive_control,control-d44271d6c60137d6,outpt CARDIAC physiotherapy SESS /CW-3911,1,S062,S062,Outpatient Cardiac Physiotherapy Session,0.98,0.99,0.98,1.0,True,True,jev-1.13.0,3750,1024,1.1835
+positive_control,control-b96f9e0c4b4e7a4c,gi NURS obs elect,1,S031,S031,Elective Gastrointestinal Nursing Observation,0.98,0.99,0.98,1.0,True,True,jev-1.13.0,3744,1024,1.1464
+positive_control,control-09c2c191924052d4,supv  - GASTROINTESTINAL nurs OBS,1,S093,S093,Supervised Gastrointestinal Nursing Observation,1.0,1.0,1.0,1.0,True,True,jev-1.13.0,3752,1024,1.1846
+positive_control,control-b0d113b6942d7559,CONF intens GER cs /CW-3922,1,S051,S051,Intensive Geriatric Case Conference,0.99,1.0,1.0,1.0,True,True,jev-1.13.0,3743,1024,1.2644
+positive_control,control-d42a201db9f8e9e7,postop GERIATRIC cs CONF /CW-2720,1,S070,S070,Postoperative Geriatric Case Conference,0.99,1.0,1.0,1.0,True,True,jev-1.13.0,3747,1024,1.5663
+positive_control,control-b4c7df6c84617d5b,PROG - amb RHEUM rehabilitation /CW-6302,1,S014,S014,Ambulatory Rheumatologic Rehabilitation Programme,0.99,0.99,0.98,1.0,True,True,jev-1.13.0,3747,1024,1.304
+positive_control,control-f14352e8869172ec,prog - EMER rheum REHAB /CW-5035,1,S037,S037,Emergency Rheumatologic Rehabilitation Programme,0.96,0.97,0.94,1.0,True,True,jev-1.13.0,3748,1024,2.8265
+positive_control,control-de4d9c768a1dfd29,OCCUPANCY adv ONC wd BD,1,S001,S001,Advanced Oncology Ward Bed Occupancy,0.99,1.0,1.0,1.0,True,True,jev-1.13.0,3749,1024,1.1054
+positive_control,control-fe9c8eda82bb67b7,ONC wd BD occ STD,1,S088,S088,Standard Oncology Ward Bed Occupancy,0.99,0.99,0.98,1.0,True,True,jev-1.13.0,3745,1024,1.1519
+positive_control,control-5de06e44b676e9a0,STD - hep INF ther /CW-6477,1,S087,S087,Standard Hepatic Infusion Therapy,0.99,1.0,1.0,1.0,True,True,jev-1.13.0,3744,1024,1.1632
+positive_control,control-60ea19c53e9e45e4,ext - HEP transf SVC /CW-9407,1,S039,S039,Extended Hepatic Transfusion Service,0.99,1.0,1.0,1.0,True,True,jev-1.13.0,3746,1024,1.1133

@@ -1,0 +1,56 @@
+{
+  "id": "hospital_4_review_v2",
+  "document": "data/assessment/contracts/hospital_4/conditional_reimbursement_agreement.md",
+  "source_sha256": "715c7db32ff8c6fcd28bb7c9bcba7c2b14137d473305197950e901a08df73ec3",
+  "basis": "Independent review of Hospital 4; Hospital 1 policies are not imported.",
+  "contract_identity": "assessment_hospital_context",
+  "service_day": "calendar_service_date",
+  "facility_and_plan": "uniform_rates_section_2_2",
+  "rounding": "half_up_each_step",
+  "premium_scope": "all_delivered_units_on_day; equal-quantity duplicate descriptions counted once for context; delivered context inferred from billing, not independent delivery evidence",
+  "volume_scope": "UNRESOLVED: population and reset horizon not specified; lower usage bound zero, upper bound contract-wide billed usage; only invariant rates are payable",
+  "volume_quantity": "billed_units_as_working_upper_bound; no corrected quantities; missing or incompatible units produce unknown upper bounds",
+  "line_order": "ascending lexical; validate H4 fixed-width identifiers",
+  "caps": "Section 6.1 excess nonpayable; min(inferred delivered quantity, cap) for the retained eligible occurrence; corrected amount is an approved assumption-dependent estimate, not established actual delivered quantity",
+  "duplicates": "earliest eligible ascending lexical line ID for exact copies only: same service/patient/date/quantity/unit/unit price/line charge; identical multi-unit copies included; conflicting quantities, rates or eligibility unresolved; H1 price-aware selection not adopted",
+  "exclusions": "inclusive <= N days; same patient across invoices in either temporal direction; exclude only first-column service; approved interpretation supported by analogous H1 wording/labels, not H4 validation",
+  "ambiguous_unit": "per hour, per item retained verbatim; no conversion or rate choice; all affected calculations reviewed",
+  "valid_dates": "inclusive term endpoints interpretation; invalid service dates flagged, no automatic zero",
+  "submission_gate": "known integer expected total (including approved cap estimate), decisive flag, no blocking uncertainty, unique header ID, valid source cents; report amount assumptions separately",
+  "uncertainty": "propagate candidate presence and quantity uncertainty; do not replace unknown with zero",
+  "approval_prompt": "prompts/008_hospital_4_approved_policy_update.md",
+  "cap_correction": {
+    "amount_status": "assumption_dependent",
+    "assumption_id": "cap_quantity_is_reimbursable_estimate",
+    "confirmed_violation": "daily_cap",
+    "actual_delivered_quantity_established": false,
+    "submission_allowed_if_otherwise_defensible": true,
+    "confidence_adjustment": null,
+    "confidence_note": "Existing class heuristic unchanged; no cap-specific calibration or invented numerical penalty. H1 four cap cases imply below-cap quantities; latent original quantity explanation unproven."
+  },
+  "duplicate_retention": {
+    "order": "line_id_ascending_lexical",
+    "exact_fields": [
+      "matched_service",
+      "patient_id",
+      "service_date",
+      "quantity",
+      "unit_basis_as_billed",
+      "unit_price_cents",
+      "line_total_cents"
+    ],
+    "requires": "consistent known eligibility and adjusted rate; no uncertain related occurrences",
+    "conflict_action": "review",
+    "multi_unit_copies": true
+  },
+  "exclusion_endpoints": {
+    "operator": "<=",
+    "status": "approved_interpretation",
+    "h1_support": [
+      "INV-H1-000847",
+      "INV-H1-000211"
+    ],
+    "validated_on_hospital_4": false
+  },
+  "wrong_units": "case-specific independent quantity evidence required; no quantity inferred from prices or blanket unit-label typo assumption; no new H4 quantity evidence supplied"
+}

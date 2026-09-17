@@ -1,0 +1,52 @@
+{
+  "implementation_sha256": {
+    "hospital_4/__init__.py": "30bc13f1ad97443f9a80a45d0bcca76e94cc5ca60f3aa896a8aaae2cf294cf39",
+    "hospital_4/__main__.py": "81755a29a380f690a7a7280d834c09104472dc3a6992d9d37cfbad2976b168de",
+    "hospital_4/comparison.py": "8b994a55be214d866f4249b8b0b7aee0cfc13dabde0158d669a30569362ffe03",
+    "hospital_4/engine.py": "d6425e3512c3c7808b952025ece691a1f7d8461bbd77bd628417d36b687aa2a5",
+    "hospital_4/extract.py": "bfe6bc9dbc500f5dc56d156cc488d5ed7bd1b567c4fa535704d24cc70789b01a",
+    "hospital_4/manual_check.py": "fcb15a750fe37498d8194562885ff5868afa196668bff37f00a83b0e548723a7",
+    "hospital_4/submission.py": "60c7e779335146d80cf9c332403121eb7d60c9788203c57f903336bfd8d17ba0",
+    "hospital_4/tests/test_hospital_4.py": "f3a518339eba347d308d9c8a3898293831796b3f3e2ad89a8d15b321680adff4",
+    "policies/hospital_4.json": "44916b6c4d222c8993c5b9bf4e7ebea70ffcff44c25812303945648248dfb630",
+    "policies/hospital_4_aliases.json": "b38fe44aea7eea29b290d8dce4a0d7e5a0bf14b2345599f8c6ac175086fe19f2"
+  },
+  "inputs_sha256": {
+    "data/assessment/invoices/hospital_4_invoices.csv": "94697b99a6788c87dd80f63aae339fe330d58ad4fdf0aa5ead10591668024fda",
+    "data/assessment/invoices/hospital_4_line_items.csv": "c17a6b131bccb5885815ba8e61c110196a849bc49d154ace2d1d8acf6c43c18b",
+    "data/assessment/labels/hospital_1_labels.csv": "79e7918337b7836d810b1164ec955684454dd7dcdd805ee7e0a7a980d14302b6",
+    "data/assessment/contracts/hospital_4/conditional_reimbursement_agreement.md": "715c7db32ff8c6fcd28bb7c9bcba7c2b14137d473305197950e901a08df73ec3",
+    "data/assessment/submission_template.csv": "de358231d184b181c333ba77b927023acc6a722d8a3b64f113e7afb262f73ed8"
+  },
+  "preserved_hospital_1_outputs_sha256": {
+    "outputs/hospital_1/evaluation_development.json": "8bea1e7d382b94115892060174a6aa990f371ac84d757c26d704109ea2cf1c3f",
+    "outputs/hospital_1/evaluation_development.md": "784b154eb880f5fdd5ab0bdda919a8406de74b7c781830edd85205afb4d5b18e",
+    "outputs/hospital_1/evaluation_freeze.json": "909730039f3bb373d9d49c60268c8cc5278ee184cf82061447347ac86afdbc3f",
+    "outputs/hospital_1/evaluation_held_aside.json": "3ae358b60a7eac8d957afd50a7b4b55ed8d566b16e7a55880f73fc15e5ed8496",
+    "outputs/hospital_1/evaluation_held_aside.md": "2832a995fd389e3e6fb8aa88e13e7d6dc9c8d04682c9602e848a812ddd8aed4f",
+    "outputs/hospital_1/invoice_audit.csv": "0bd6c4143d8c088e475138b0dbe927ac319d23db16b0c3e829f20390c957638f",
+    "outputs/hospital_1/invoice_audit.jsonl": "be32bb36f3a8a115e95c39ad598b5b8c663252e197b305f59b618b7408065b1f",
+    "outputs/hospital_1/line_audit.jsonl": "c76a26cd8639dbd35f5848b725107f5a233e55683acee959cefca974addf2b03",
+    "outputs/hospital_1/review_log.jsonl": "19d21bc22b8ef9302a43fa1c71a913476c32e6e5f7f79fabd3df457c2d3612f2",
+    "outputs/hospital_1/run_manifest.json": "aeb55397fe3935aaabf097393467d4f90e16fc2a5861bf7e0316ddf70b5f042b",
+    "outputs/hospital_1/summary.json": "84f08233a511d28b2f96ba05fb43c6818325d75e4413826540eb3570a44e093a"
+  },
+  "artifacts_sha256": {
+    "rules.json": "dc83d87ca784f64391811c2342e34f1581ea3dd4896acafa249e6118824635be",
+    "line_audit.jsonl": "ada401bbd6d2100b2ee5c9d25be5e4cb3ea80b633504ca6eb775b8e3c510648e",
+    "invoice_audit.jsonl": "8d8ef61af7cd85b328815468f15d1ff807af1a8d81cebf00bb60a90b29331796",
+    "summary.json": "6469167269acb5248fd56b3a983a568c868c08776b8482fa3e0bb15b2867ca41",
+    "confidence_method.json": "59c270a87296b18d3fdd75fcec2f5a7bd008dba1c77aa38e3c7aa6b1b2277d89",
+    "submission_evidence.jsonl": "dbae6afc2d9e2f349c8b0b8cd4ed58123a54f7f781e26781377f1c9202512abe",
+    "policy_change_report.json": "bbbdc0b07f899be2daeeaa3740aa729ffd30571a97cfd17ca7c3f28a8b9d1cd3",
+    "policy_change_report.md": "8ce6d1b71d23350c9be8cd15de6e830a06df26eb2b84738d2aefc3cae25a3fe6",
+    "omitted_invoices.csv": "2746a5d95f9c77f171268e095d773d24e9e01f10c8d5b07a5fcd6aef35422f5d",
+    "review_log.jsonl": "9af44d6a8044a1a971dad9841c6663832c332e45d1e4adf853931a97a7006bcc"
+  },
+  "submission_sha256": "1b3394fab1d389ee821f68df7ec296fd053a0cf5a48d0ee750148dc5aeaa21cd",
+  "baseline_manifest_sha256": "1ba3e5362052de85fefbc69446c4670940a8f61b33387ae53c718fe9ec2fa673",
+  "labels_used_directly_at_runtime_for_h4_matching_or_pricing": false,
+  "h1_labels_read_at_runtime_only_for_confidence": true,
+  "h1_exposed_label_analysis_informed_approved_h4_interpretations": true,
+  "interpretation_approval_prompt": "prompts/008_hospital_4_approved_policy_update.md"
+}

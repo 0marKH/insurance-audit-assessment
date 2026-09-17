@@ -1,0 +1,5 @@
+# Preserve byte-pinned source data, evidence and frozen snapshots on checkout.
+* -text
+*.pdf binary
+# CSV writers deliberately use RFC-style CRLF; keep those original bytes.
+*.csv whitespace=cr-at-eol

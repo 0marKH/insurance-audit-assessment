@@ -1,0 +1,1204 @@
+{
+  "split": "all",
+  "labelled_invoices": 913,
+  "audit_records": 918,
+  "unique_audit_invoice_ids": 913,
+  "comparison_rows": 913,
+  "decision_comparison": {
+    "review_label_correct": 410,
+    "review_label_erroneous": 2,
+    "true_negative": 445,
+    "true_positive": 56
+  },
+  "amount_comparison": {
+    "audit_amount_unresolved": 456,
+    "exact": 456,
+    "mismatch": 1
+  },
+  "requires_review": 456,
+  "duplicate_audit_invoice_ids": [
+    "INV-H1-000068",
+    "INV-H1-000152",
+    "INV-H1-000429",
+    "INV-H1-000457",
+    "INV-H1-000548"
+  ],
+  "missing_audit_ids": [],
+  "unlabelled_audit_ids": [],
+  "evaluation": {
+    "labelled_invoices": 913,
+    "confusion": {
+      "correct_review": 410,
+      "erroneous_erroneous": 56,
+      "correct_correct": 445,
+      "erroneous_review": 2
+    },
+    "decision_coverage": {
+      "numerator": 501,
+      "denominator": 913,
+      "value": 0.5487404162102957
+    },
+    "known_error_precision": {
+      "numerator": 56,
+      "denominator": 56,
+      "value": 1.0
+    },
+    "known_error_recall_including_abstentions": {
+      "numerator": 56,
+      "denominator": 58,
+      "value": 0.9655172413793104
+    },
+    "accuracy_on_decided_invoices": {
+      "numerator": 501,
+      "denominator": 501,
+      "value": 1.0
+    },
+    "expected_amount_coverage": {
+      "numerator": 457,
+      "denominator": 913,
+      "value": 0.5005476451259584
+    },
+    "exact_expected_amount_accuracy_when_known": {
+      "numerator": 456,
+      "denominator": 457,
+      "value": 0.9978118161925602
+    },
+    "mean_absolute_error_cents_when_known": {
+      "numerator": 14775,
+      "denominator": 457
+    },
+    "per_label_category_invoice_detection": {
+      "bundle_not_applied": {
+        "labelled_invoices": 5,
+        "known_error_detected": 5,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 3,
+        "exact_expected_amounts": 3
+      },
+      "contract_number_mismatch": {
+        "labelled_invoices": 5,
+        "known_error_detected": 5,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 3,
+        "exact_expected_amounts": 3
+      },
+      "cross_invoice_duplicate": {
+        "labelled_invoices": 4,
+        "known_error_detected": 4,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 2,
+        "exact_expected_amounts": 2
+      },
+      "daily_cap_exceeded": {
+        "labelled_invoices": 4,
+        "known_error_detected": 4,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 1,
+        "exact_expected_amounts": 0
+      },
+      "duplicate_invoice_id": {
+        "labelled_invoices": 5,
+        "known_error_detected": 5,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "exclusion_window_violation": {
+        "labelled_invoices": 4,
+        "known_error_detected": 4,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 1,
+        "exact_expected_amounts": 1
+      },
+      "invoice_total_mismatch": {
+        "labelled_invoices": 6,
+        "known_error_detected": 6,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 2,
+        "exact_expected_amounts": 2
+      },
+      "line_total_arithmetic": {
+        "labelled_invoices": 6,
+        "known_error_detected": 6,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "malformed_service_date": {
+        "labelled_invoices": 6,
+        "known_error_detected": 6,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "premium_incorrectly_applied": {
+        "labelled_invoices": 6,
+        "known_error_detected": 6,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 3,
+        "exact_expected_amounts": 3
+      },
+      "premium_omitted": {
+        "labelled_invoices": 3,
+        "known_error_detected": 3,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "service_date_after_invoice_date": {
+        "labelled_invoices": 5,
+        "known_error_detected": 5,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "service_date_out_of_window": {
+        "labelled_invoices": 5,
+        "known_error_detected": 5,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0
+      },
+      "unit_price_mismatch": {
+        "labelled_invoices": 10,
+        "known_error_detected": 10,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 4,
+        "exact_expected_amounts": 4
+      },
+      "unknown_service": {
+        "labelled_invoices": 12,
+        "known_error_detected": 11,
+        "sent_for_review_without_known_violation": 1,
+        "incorrectly_accepted": 0
+      },
+      "volume_discount_incorrectly_applied": {
+        "labelled_invoices": 4,
+        "known_error_detected": 4,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 1,
+        "exact_expected_amounts": 1
+      },
+      "volume_discount_omitted": {
+        "labelled_invoices": 4,
+        "known_error_detected": 4,
+        "sent_for_review_without_known_violation": 0,
+        "incorrectly_accepted": 0,
+        "known_expected_amounts": 1,
+        "exact_expected_amounts": 1
+      },
+      "wrong_unit_basis": {
+        "labelled_invoices": 11,
+        "known_error_detected": 10,
+        "sent_for_review_without_known_violation": 1,
+        "incorrectly_accepted": 0
+      }
+    },
+    "grouped_category_detection": {
+      "pricing": {
+        "true_positive": 25,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": {
+          "numerator": 25,
+          "denominator": 25,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 25,
+          "denominator": 27,
+          "value": 0.9259259259259259
+        }
+      },
+      "arithmetic": {
+        "true_positive": 11,
+        "false_positive": 5,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 11,
+          "denominator": 16,
+          "value": 0.6875
+        },
+        "recall": {
+          "numerator": 11,
+          "denominator": 11,
+          "value": 1.0
+        }
+      },
+      "dates": {
+        "true_positive": 15,
+        "false_positive": 5,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 15,
+          "denominator": 20,
+          "value": 0.75
+        },
+        "recall": {
+          "numerator": 15,
+          "denominator": 15,
+          "value": 1.0
+        }
+      },
+      "unit_basis": {
+        "true_positive": 10,
+        "false_positive": 1,
+        "false_negative": 1,
+        "precision": {
+          "numerator": 10,
+          "denominator": 11,
+          "value": 0.9090909090909091
+        },
+        "recall": {
+          "numerator": 10,
+          "denominator": 11,
+          "value": 0.9090909090909091
+        }
+      },
+      "daily_caps": {
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        }
+      },
+      "duplicate_service": {
+        "true_positive": 4,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        }
+      },
+      "duplicate_invoice_id": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 5,
+          "denominator": 5,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 5,
+          "denominator": 5,
+          "value": 1.0
+        }
+      },
+      "exclusions": {
+        "true_positive": 3,
+        "false_positive": 0,
+        "false_negative": 1,
+        "precision": {
+          "numerator": 3,
+          "denominator": 3,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75
+        }
+      },
+      "contract_identity": {
+        "true_positive": 5,
+        "false_positive": 0,
+        "false_negative": 0,
+        "precision": {
+          "numerator": 5,
+          "denominator": 5,
+          "value": 1.0
+        },
+        "recall": {
+          "numerator": 5,
+          "denominator": 5,
+          "value": 1.0
+        }
+      },
+      "uncontracted_service": {
+        "true_positive": 0,
+        "false_positive": 0,
+        "false_negative": 12,
+        "precision": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "recall": {
+          "numerator": 0,
+          "denominator": 12,
+          "value": 0.0
+        }
+      }
+    },
+    "uncertainty_reasons": {
+      "service_match_unresolved": 250,
+      "invalid_date_payability_requires_review": 20,
+      "retention_or_payable_quantity_requires_review": 101,
+      "delivered_quantity_or_duplicate_identity_uncertain": 64,
+      "exclusion_presence_uncertain": 42,
+      "volume_discount_uncertain": 215,
+      "invoice_identifier_join_ambiguous": 5,
+      "missing_or_ambiguous_invoice_join": 5,
+      "missing_patient_context": 5,
+      "premium_eligibility_uncertain": 9,
+      "contract_quantity_unknown_due_to_unit_mismatch": 11,
+      "bundle_eligibility_uncertain": 2
+    },
+    "systematic_examples": {
+      "service_match_unresolved": [
+        "INV-H1-000001",
+        "INV-H1-000003"
+      ],
+      "invalid_date_payability_requires_review": [
+        "INV-H1-000002",
+        "INV-H1-000036"
+      ],
+      "retention_or_payable_quantity_requires_review": [
+        "INV-H1-000002",
+        "INV-H1-000036"
+      ],
+      "delivered_quantity_or_duplicate_identity_uncertain": [
+        "INV-H1-000036",
+        "INV-H1-000067"
+      ],
+      "exclusion_presence_uncertain": [
+        "INV-H1-000036",
+        "INV-H1-000043"
+      ],
+      "volume_discount_uncertain": [
+        "INV-H1-000036",
+        "INV-H1-000037"
+      ],
+      "invoice_identifier_join_ambiguous": [
+        "INV-H1-000068",
+        "INV-H1-000152"
+      ],
+      "missing_or_ambiguous_invoice_join": [
+        "INV-H1-000068",
+        "INV-H1-000152"
+      ],
+      "missing_patient_context": [
+        "INV-H1-000068",
+        "INV-H1-000152"
+      ],
+      "premium_eligibility_uncertain": [
+        "INV-H1-000068",
+        "INV-H1-000116"
+      ],
+      "contract_quantity_unknown_due_to_unit_mismatch": [
+        "INV-H1-000211",
+        "INV-H1-000236"
+      ],
+      "bundle_eligibility_uncertain": [
+        "INV-H1-000548",
+        "INV-H1-000847"
+      ],
+      "missed_known_error": [
+        {
+          "invoice_id": "INV-H1-000657",
+          "decision": "review",
+          "label_categories": [
+            "wrong_unit_basis"
+          ],
+          "violations": []
+        },
+        {
+          "invoice_id": "INV-H1-000667",
+          "decision": "review",
+          "label_categories": [
+            "unknown_service"
+          ],
+          "violations": []
+        }
+      ]
+    },
+    "amount_mismatch_examples": [
+      {
+        "invoice_id": "INV-H1-000015",
+        "calculated_cents": 1210600,
+        "label_cents": 1195825,
+        "categories": [
+          "daily_cap_exceeded"
+        ]
+      }
+    ],
+    "confidence_calibration": "Not measured; no numerical confidence scores are emitted."
+  },
+  "evaluation_by_split": {
+    "development": {
+      "labelled_invoices": 717,
+      "confusion": {
+        "erroneous_erroneous": 44,
+        "correct_review": 319,
+        "correct_correct": 354
+      },
+      "decision_coverage": {
+        "numerator": 398,
+        "denominator": 717,
+        "value": 0.5550906555090656
+      },
+      "known_error_precision": {
+        "numerator": 44,
+        "denominator": 44,
+        "value": 1.0
+      },
+      "known_error_recall_including_abstentions": {
+        "numerator": 44,
+        "denominator": 44,
+        "value": 1.0
+      },
+      "accuracy_on_decided_invoices": {
+        "numerator": 398,
+        "denominator": 398,
+        "value": 1.0
+      },
+      "expected_amount_coverage": {
+        "numerator": 363,
+        "denominator": 717,
+        "value": 0.5062761506276151
+      },
+      "exact_expected_amount_accuracy_when_known": {
+        "numerator": 363,
+        "denominator": 363,
+        "value": 1.0
+      },
+      "mean_absolute_error_cents_when_known": {
+        "numerator": 0,
+        "denominator": 363
+      },
+      "per_label_category_invoice_detection": {
+        "bundle_not_applied": {
+          "labelled_invoices": 4,
+          "known_error_detected": 4,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 2,
+          "exact_expected_amounts": 2
+        },
+        "contract_number_mismatch": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 2,
+          "exact_expected_amounts": 2
+        },
+        "cross_invoice_duplicate": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 2,
+          "exact_expected_amounts": 2
+        },
+        "daily_cap_exceeded": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "duplicate_invoice_id": {
+          "labelled_invoices": 5,
+          "known_error_detected": 5,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "exclusion_window_violation": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "invoice_total_mismatch": {
+          "labelled_invoices": 4,
+          "known_error_detected": 4,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "line_total_arithmetic": {
+          "labelled_invoices": 6,
+          "known_error_detected": 6,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "malformed_service_date": {
+          "labelled_invoices": 5,
+          "known_error_detected": 5,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "premium_incorrectly_applied": {
+          "labelled_invoices": 5,
+          "known_error_detected": 5,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 2,
+          "exact_expected_amounts": 2
+        },
+        "premium_omitted": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "service_date_after_invoice_date": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "service_date_out_of_window": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "unit_price_mismatch": {
+          "labelled_invoices": 8,
+          "known_error_detected": 8,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 4,
+          "exact_expected_amounts": 4
+        },
+        "unknown_service": {
+          "labelled_invoices": 10,
+          "known_error_detected": 10,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "volume_discount_incorrectly_applied": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "volume_discount_omitted": {
+          "labelled_invoices": 4,
+          "known_error_detected": 4,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "wrong_unit_basis": {
+          "labelled_invoices": 8,
+          "known_error_detected": 8,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        }
+      },
+      "grouped_category_detection": {
+        "pricing": {
+          "true_positive": 21,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": {
+            "numerator": 21,
+            "denominator": 21,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 21,
+            "denominator": 22,
+            "value": 0.9545454545454546
+          }
+        },
+        "arithmetic": {
+          "true_positive": 9,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 9,
+            "denominator": 14,
+            "value": 0.6428571428571429
+          },
+          "recall": {
+            "numerator": 9,
+            "denominator": 9,
+            "value": 1.0
+          }
+        },
+        "dates": {
+          "true_positive": 10,
+          "false_positive": 5,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 10,
+            "denominator": 15,
+            "value": 0.6666666666666666
+          },
+          "recall": {
+            "numerator": 10,
+            "denominator": 10,
+            "value": 1.0
+          }
+        },
+        "unit_basis": {
+          "true_positive": 8,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 8,
+            "denominator": 9,
+            "value": 0.8888888888888888
+          },
+          "recall": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          }
+        },
+        "daily_caps": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          }
+        },
+        "duplicate_service": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          }
+        },
+        "duplicate_invoice_id": {
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          }
+        },
+        "exclusions": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          }
+        },
+        "contract_identity": {
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          }
+        },
+        "uncontracted_service": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 10,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 10,
+            "value": 0.0
+          }
+        }
+      },
+      "uncertainty_reasons": {
+        "invalid_date_payability_requires_review": 15,
+        "retention_or_payable_quantity_requires_review": 71,
+        "service_match_unresolved": 207,
+        "delivered_quantity_or_duplicate_identity_uncertain": 49,
+        "exclusion_presence_uncertain": 29,
+        "volume_discount_uncertain": 161,
+        "invoice_identifier_join_ambiguous": 5,
+        "missing_or_ambiguous_invoice_join": 5,
+        "missing_patient_context": 5,
+        "premium_eligibility_uncertain": 8,
+        "contract_quantity_unknown_due_to_unit_mismatch": 9,
+        "bundle_eligibility_uncertain": 2
+      },
+      "systematic_examples": {
+        "invalid_date_payability_requires_review": [
+          "INV-H1-000002",
+          "INV-H1-000036"
+        ],
+        "retention_or_payable_quantity_requires_review": [
+          "INV-H1-000002",
+          "INV-H1-000036"
+        ],
+        "service_match_unresolved": [
+          "INV-H1-000003",
+          "INV-H1-000012"
+        ],
+        "delivered_quantity_or_duplicate_identity_uncertain": [
+          "INV-H1-000036",
+          "INV-H1-000067"
+        ],
+        "exclusion_presence_uncertain": [
+          "INV-H1-000036",
+          "INV-H1-000043"
+        ],
+        "volume_discount_uncertain": [
+          "INV-H1-000036",
+          "INV-H1-000037"
+        ],
+        "invoice_identifier_join_ambiguous": [
+          "INV-H1-000068",
+          "INV-H1-000152"
+        ],
+        "missing_or_ambiguous_invoice_join": [
+          "INV-H1-000068",
+          "INV-H1-000152"
+        ],
+        "missing_patient_context": [
+          "INV-H1-000068",
+          "INV-H1-000152"
+        ],
+        "premium_eligibility_uncertain": [
+          "INV-H1-000068",
+          "INV-H1-000116"
+        ],
+        "contract_quantity_unknown_due_to_unit_mismatch": [
+          "INV-H1-000236",
+          "INV-H1-000257"
+        ],
+        "bundle_eligibility_uncertain": [
+          "INV-H1-000548",
+          "INV-H1-000847"
+        ]
+      },
+      "amount_mismatch_examples": [],
+      "confidence_calibration": "Not measured; no numerical confidence scores are emitted."
+    },
+    "held_aside": {
+      "labelled_invoices": 196,
+      "confusion": {
+        "correct_review": 91,
+        "correct_correct": 91,
+        "erroneous_erroneous": 12,
+        "erroneous_review": 2
+      },
+      "decision_coverage": {
+        "numerator": 103,
+        "denominator": 196,
+        "value": 0.5255102040816326
+      },
+      "known_error_precision": {
+        "numerator": 12,
+        "denominator": 12,
+        "value": 1.0
+      },
+      "known_error_recall_including_abstentions": {
+        "numerator": 12,
+        "denominator": 14,
+        "value": 0.8571428571428571
+      },
+      "accuracy_on_decided_invoices": {
+        "numerator": 103,
+        "denominator": 103,
+        "value": 1.0
+      },
+      "expected_amount_coverage": {
+        "numerator": 94,
+        "denominator": 196,
+        "value": 0.47959183673469385
+      },
+      "exact_expected_amount_accuracy_when_known": {
+        "numerator": 93,
+        "denominator": 94,
+        "value": 0.9893617021276596
+      },
+      "mean_absolute_error_cents_when_known": {
+        "numerator": 14775,
+        "denominator": 94
+      },
+      "per_label_category_invoice_detection": {
+        "bundle_not_applied": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "contract_number_mismatch": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "cross_invoice_duplicate": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "daily_cap_exceeded": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 0
+        },
+        "exclusion_window_violation": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "invoice_total_mismatch": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "malformed_service_date": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "premium_incorrectly_applied": {
+          "labelled_invoices": 1,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0,
+          "known_expected_amounts": 1,
+          "exact_expected_amounts": 1
+        },
+        "service_date_after_invoice_date": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "service_date_out_of_window": {
+          "labelled_invoices": 3,
+          "known_error_detected": 3,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "unit_price_mismatch": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "unknown_service": {
+          "labelled_invoices": 2,
+          "known_error_detected": 1,
+          "sent_for_review_without_known_violation": 1,
+          "incorrectly_accepted": 0
+        },
+        "volume_discount_incorrectly_applied": {
+          "labelled_invoices": 2,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 0,
+          "incorrectly_accepted": 0
+        },
+        "wrong_unit_basis": {
+          "labelled_invoices": 3,
+          "known_error_detected": 2,
+          "sent_for_review_without_known_violation": 1,
+          "incorrectly_accepted": 0
+        }
+      },
+      "grouped_category_detection": {
+        "pricing": {
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 4,
+            "denominator": 5,
+            "value": 0.8
+          }
+        },
+        "arithmetic": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          }
+        },
+        "dates": {
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          }
+        },
+        "unit_basis": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          }
+        },
+        "daily_caps": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          }
+        },
+        "duplicate_service": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          }
+        },
+        "duplicate_invoice_id": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          }
+        },
+        "exclusions": {
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          }
+        },
+        "contract_identity": {
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          },
+          "recall": {
+            "numerator": 2,
+            "denominator": 2,
+            "value": 1.0
+          }
+        },
+        "uncontracted_service": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "recall": {
+            "numerator": 0,
+            "denominator": 2,
+            "value": 0.0
+          }
+        }
+      },
+      "uncertainty_reasons": {
+        "service_match_unresolved": 43,
+        "volume_discount_uncertain": 54,
+        "exclusion_presence_uncertain": 13,
+        "retention_or_payable_quantity_requires_review": 30,
+        "delivered_quantity_or_duplicate_identity_uncertain": 15,
+        "invalid_date_payability_requires_review": 5,
+        "contract_quantity_unknown_due_to_unit_mismatch": 2,
+        "premium_eligibility_uncertain": 1
+      },
+      "systematic_examples": {
+        "service_match_unresolved": [
+          "INV-H1-000001",
+          "INV-H1-000025"
+        ],
+        "volume_discount_uncertain": [
+          "INV-H1-000038",
+          "INV-H1-000041"
+        ],
+        "exclusion_presence_uncertain": [
+          "INV-H1-000045",
+          "INV-H1-000060"
+        ],
+        "retention_or_payable_quantity_requires_review": [
+          "INV-H1-000045",
+          "INV-H1-000060"
+        ],
+        "delivered_quantity_or_duplicate_identity_uncertain": [
+          "INV-H1-000148",
+          "INV-H1-000149"
+        ],
+        "invalid_date_payability_requires_review": [
+          "INV-H1-000148",
+          "INV-H1-000219"
+        ],
+        "contract_quantity_unknown_due_to_unit_mismatch": [
+          "INV-H1-000211",
+          "INV-H1-000635"
+        ],
+        "missed_known_error": [
+          {
+            "invoice_id": "INV-H1-000657",
+            "decision": "review",
+            "label_categories": [
+              "wrong_unit_basis"
+            ],
+            "violations": []
+          },
+          {
+            "invoice_id": "INV-H1-000667",
+            "decision": "review",
+            "label_categories": [
+              "unknown_service"
+            ],
+            "violations": []
+          }
+        ],
+        "premium_eligibility_uncertain": [
+          "INV-H1-000678"
+        ]
+      },
+      "amount_mismatch_examples": [
+        {
+          "invoice_id": "INV-H1-000015",
+          "calculated_cents": 1210600,
+          "label_cents": 1195825,
+          "categories": [
+            "daily_cap_exceeded"
+          ]
+        }
+      ],
+      "confidence_calibration": "Not measured; no numerical confidence scores are emitted."
+    }
+  },
+  "provenance": {
+    "labels_sha256": "79e7918337b7836d810b1164ec955684454dd7dcdd805ee7e0a7a980d14302b6",
+    "audit_sha256": "be32bb36f3a8a115e95c39ad598b5b8c663252e197b305f59b618b7408065b1f",
+    "script_sha256": "3075c29800483f3c5c4117f364f454a94a82b5e81c35267b410a80b3255d8c37"
+  }
+}

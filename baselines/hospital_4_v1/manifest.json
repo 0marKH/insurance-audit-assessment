@@ -1,0 +1,30 @@
+{
+  "description": "Frozen Hospital 4 v1 before prompt 008 approved policy changes. H1 and original assessment data remain at repository root, protected by their existing manifests.",
+  "files_sha256": {
+    "README.md": "d4f5ee5bfbe24d5e52ad9016e12f3e6858bd234522ac4dc5c73d2b092ff44bdf",
+    "docs/assessment_writeup.md": "f72bf831e83d8996cd7ff3268aa9239f58ad3d66afac4c61b5fa1e4ad3500d35",
+    "docs/decision_log.md": "e1e05f9953bce827f4bb495b120d79f66da907f97b76cd15caeeaa31625ee1c6",
+    "docs/hospital_4_manual_review.md": "8aa5cd2377dcdf8587a343a3bb68914f877268aa5f977bed8847ea3b2cb15f21",
+    "docs/hospital_4_review.md": "b92f3b9412d48e9c9f943947acc896c13310823e72723d459bd29b0860669510",
+    "hospital_4/__init__.py": "30bc13f1ad97443f9a80a45d0bcca76e94cc5ca60f3aa896a8aaae2cf294cf39",
+    "hospital_4/__main__.py": "7961a6dcf0d952caa71c499c0a1f23c6944d02210a6ef2949cf146e7c60a9882",
+    "hospital_4/engine.py": "69995b6e2516ebbd8931df3b0d5e076e2d57db44b900325d4a78a98b0622bb42",
+    "hospital_4/extract.py": "c5a16be1b5f9b482506fc19d1a1d490b236a59faeb344adb4bdf503283e94301",
+    "hospital_4/manual_check.py": "59348a2f004aef9fb2ca3a845b7a5663831393317c3f004e0adc483abae36edd",
+    "hospital_4/submission.py": "0247ad7cb8458b3f646f151bcdbb8f793b9f9602e383cfdebd18d52af96b5393",
+    "hospital_4/tests/test_hospital_4.py": "37bfe58be4b4a75e1522879a03902cea037e4c0bb43803020924af8c1d57ce30",
+    "output/pdf/assessment_writeup.pdf": "da72ba54ae1823f58bde1836b359992172c118f7a1008ae4adfa2abaa272fbb3",
+    "outputs/hospital_4/confidence_method.json": "4aacc95492d414e3fcc6845f65c780d623bbabc37466f9c985a2dcca660dd9bf",
+    "outputs/hospital_4/invoice_audit.jsonl": "88b1d91c4e2974804c675a962799b61f0a1352d8e2d71d6a8e00596211d61e39",
+    "outputs/hospital_4/line_audit.jsonl": "6ede3ba90ffc32a6ce2147100df441e80a58ebe652367dac0c9de7ea85d5e62d",
+    "outputs/hospital_4/omitted_invoices.csv": "c1ffb3f66d0ce456c9905d7215417de58ef4d177f3592eee99764417b89688f4",
+    "outputs/hospital_4/review_log.jsonl": "a5de0cc6984eede2be821e78ea325e2c3ef0a5aae1860f231ab52320ed5fe7ff",
+    "outputs/hospital_4/rules.json": "e6e5cd7a3da977da11260a65d8fd104c763fd32e0ae5ea5cbc4634fea6566e52",
+    "outputs/hospital_4/run_manifest.json": "57fcd834535cba9c64ce5b11ed39306868371ae105361e226850381104506bd8",
+    "outputs/hospital_4/summary.json": "16879dbea63422029d23ff5c9df7fe5f5410b903dde777a8f3a84fa0a2a80ea4",
+    "policies/hospital_4.json": "9c51c5cb6531e00e4403955408a7ae2a09dfc0dc0f798fea3e1515f94e567d01",
+    "policies/hospital_4_aliases.json": "b38fe44aea7eea29b290d8dce4a0d7e5a0bf14b2345599f8c6ac175086fe19f2",
+    "scripts/build_writeup.py": "7864a0bedc1b0c59b5888633c7f4251f14dd94da69bcb48d446b886f2ebeb8ef",
+    "submission.csv": "0c6ca5e11386526fca0f9fcda439b0775d7b4d51c542bd38990e30d5573024b5"
+  }
+}

@@ -1,0 +1,4 @@
+# Optional documentation renderer; audit runtime uses only the Python standard library.
+reportlab==4.4.9
+pillow==12.3.0
+charset-normalizer==3.5.1
