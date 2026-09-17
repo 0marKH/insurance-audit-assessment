@@ -5,16 +5,16 @@ preserved in prompts/. Historical development records remain in Git history.
 
 ## Scope and preservation
 
-Developed/froze H1, completed H4, then extended to H2/3/5 at the user's request.
+I chose a deterministic engine, supplied its architecture and rule format, and approved
+the policies. I approved H4 after Codex recommended it, then expanded to H2/3/5.
 All 49,796 target lines were processed; 1,757/3,942 unique invoices are submitted.
 Abstentions remain explicit. Original data and H1 code/evaluation remain hash-protected. Prior H4 snapshots
-remain in Git history; current audit results are reproducible. The six-to-eight-hour assessment cap is acknowledged; prior human
-working time is unknown, so no total-hours compliance claim is invented.
+remain in Git history; current audit results are reproducible.
 
 ## Contract interpretation
 
-H2: use recorded service date for the 07:00 Service Day, explicitly user-approved
-because timestamps are missing. Discount scope is expressly all patients/whole
+H2: I approved recorded service date for the 07:00 Service Day because timestamps
+are missing. Discount scope is expressly all patients/whole
 term. Same-patient, bidirectional exclusions are explicit; exact endpoints remain
 unresolved. Episode definition does not introduce an identified price adjustment.
 Actual submission timing and waivers are unavailable; screen the 60-day clause
@@ -24,15 +24,15 @@ H3: amendment overrides Appendix B by service date from 2025-01-01; seven change
 rates and two newly eligible services. New services before that date are expressly
 nonbillable. Other rules remain unchanged. Settlement history is unavailable.
 
-H4: retain approved inclusive exclusion endpoints and earliest eligible lexical
+H4: I approved inclusive exclusion endpoints and earliest eligible lexical
 retention of exact copies, including multi-unit copies. Conflicts stay unresolved.
 Caps are confirmed violations with assumption-dependent corrected amounts; retain
 the three otherwise-eligible cap estimates. Cumulative population/reset remains
 unresolved: accept only invariant rates under documented bounds. H1 analogies
 support approved interpretations, not H4 validation.
 
-H5: use invoice-header facility for line context, explicitly user-approved despite
-the contract's line-level wording. Apply service-specific facility then plan
+H5: I approved invoice-header facility for line context despite the contract's
+line-level wording. Apply service-specific facility then plan
 multipliers, rounding after each step. Whole-term/all-patient usage is explicit;
 “subsequent units” is interpreted as excluding the current line.
 
@@ -55,3 +55,12 @@ bound of joint flag/amount correctness, yielding 0.892297 correct and 0.581503
 erroneous. The transfer factor is heuristic; no H2–5 or cap-specific calibration,
 new penalty, or validated probability is claimed. H1 label reuse is development
 analysis. No runtime model or experimental mapping is used.
+
+## AI assistance and check provenance
+
+Codex inspected the contracts, built extraction, matching, engines, tests, evaluation
+and submission tooling, and drafted documentation. Codex performed the source-based
+manual calculation checks and scripted replay; these were not independent human
+adjudication. I initiated and later stopped the TypeSafe Jev experiment. Its 35-case
+trial accepted no new mappings and changed no audit decisions. Working files were
+removed during cleanup; prompt 006 and Git history retain disclosure and evidence.

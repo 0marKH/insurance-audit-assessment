@@ -4,6 +4,32 @@ Deterministic, contract-grounded auditing for Hospitals **2–5**. Hospital 1's
 labelled evaluation is preserved. No runtime AI, network, credentials or third-party
 packages are required.
 
+## My contribution and AI assistance
+
+I chose a simple deterministic rules engine, supplied the architecture and rule
+format, set the scope, and approved the interpretation and correction policies.
+I approved Hospital 4 after Codex recommended its simpler contract, then requested
+coverage of Hospitals 2–5. I also supplied Hospital 1 labelled examples for further
+investigation and approved the documented H2 date and H5 facility assumptions.
+
+Codex inspected the contracts and data, built the extractors, description matcher,
+audit engines, tests, evaluation and submission tooling, and drafted the
+supporting documentation. **Codex performed the source-based manual calculation
+checks and implemented their scripted replay.** These were not independent human
+adjudication or validation against hidden target-hospital labels.
+
+I initiated a **TypeSafe Jev** classification experiment and later stopped that
+work. Codex ran `jev-1.13.0` on 12 clear controls and 23 unresolved descriptions.
+The controls agreed with Codex-assisted reference judgments; unresolved cases
+produced 16 abstentions and seven unsupported proposals. **Zero new mappings were
+accepted**, with no changes to matching thresholds or submission results. This
+was exploratory, not an unbiased accuracy test. Experimental working files were
+removed during cleanup; [the saved prompt](prompts/006_jev_matching_pilot.md) and
+Git history preserve the experiment's disclosure and evidence.
+
+The [write-up](docs/assessment_writeup.md) includes my reflection under
+“What I would do with another week.”
+
 ## Run and verify
 
 Use **Python 3.9+** (tested on 3.9.6), from the repository root:
@@ -14,7 +40,7 @@ python3 scripts/verify_assessment.py
 ```
 
 The first command regenerates the submission and all target audit outputs. The
-second runs **103 tests**, manual calculation checks, original-data/H1 integrity
+second runs **103 tests**, Codex-authored calculation checks, original-data/H1 integrity
 checks and byte-for-byte reproduction. To check reproduction only:
 
 ```bash

@@ -68,3 +68,17 @@ Confidence preserves the existing class heuristic from exposed H1 strict rows:
 is heuristic, invoices are correlated, and neither target hospitals nor cap amounts
 are calibrated. No new numerical penalty is invented. See the final confidence
 method and submission-evidence sidecar for assumptions and limitations.
+
+## Contribution and review provenance
+
+I chose the deterministic approach, supplied the architecture, approved policies
+and provided labelled examples for further investigation. Codex built and ran the
+evaluation tooling, inspected source-based calculations and implemented their
+scripted replay. The manual checks described in the deliverables were performed
+by Codex; they were not independent human adjudication.
+
+I also initiated and later stopped an exploratory TypeSafe Jev trial. Codex tested
+35 descriptions using Codex-assisted reference judgments; no new mappings were
+accepted and no audit outputs changed. The working files were removed during
+cleanup, while prompt 006 and Git history retain the experiment record. The README
+summarizes its outcomes and limitations.

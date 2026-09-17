@@ -4,7 +4,7 @@ Final Hospitals 2-5 submission | 17 September 2026 | Hospital 1 evaluation froze
 
 ## Scope, sequence and delivery
 
-Started with Hospital 1's labelled development set, froze its engine/evaluation, then selected Hospital 4 for its simpler structured contract. At the user's final request, extended the same explicit calculation passes to Hospitals 2, 3 and 5. All 49,796 target line items and 3,968 header records were processed. Complete financial decisions remain bounded by evidence; unknown records are not accepted as correct. The six-to-eight-hour assessment cap is acknowledged, but prior human working time is unavailable, so no invented total-hours compliance claim is made.
+I chose a simple deterministic rules engine, supplied its architecture and rule format, and approved the uncertainty and correction policies. I started with Hospital 1, approved Hospital 4 after Codex recommended its simpler contract, then expanded the scope to Hospitals 2, 3 and 5. Codex built the extractors, matcher, engine adapters, tests, evaluation and submission tooling, and drafted documentation. All 49,796 target lines and 3,968 headers were processed; unsupported financial decisions remain unresolved.
 
 | Hospital | Submitted / unique IDs | Correct / erroneous | Coverage |
 |---|---|---|---|
@@ -16,6 +16,10 @@ Started with Hospital 1's labelled development set, froze its engine/evaluation,
 
 The exact six-column submission contains both correct and erroneous opinions. The 2,185 omitted IDs retain overlapping reasons in outputs/final/omitted_invoices.csv. H4's previous 374 rows are unchanged; H2/3/5 add 1,383 rows. No target-hospital labels exist, so coverage is not accuracy. H1 is not submitted.
 
+## AI assistance and exploratory classification
+
+Codex inspected contracts and data and performed the source-based manual calculation checks, then implemented their scripted replay. These checks were not independent human adjudication. I initiated a TypeSafe Jev trial and later stopped that work. Codex tested jev-1.13.0 on 12 clear controls and 23 unresolved descriptions: all controls agreed with Codex-assisted references; unresolved cases yielded 16 abstentions and seven unsupported proposals. No new mappings were accepted. The trial was exploratory, not validated accuracy. Its working files were removed during cleanup; prompt 006 and Git history preserve disclosure and evidence.
+
 ## Grounding and calculation
 
 Source-pinned references retain applicability, conditions, actions, scope, order, exact source text and uncertainty. H2 has 76 prose service clauses with embedded rules; reciprocal bundle rates are cross-checked. H3 has 118 original services, seven amended rates and two additions effective by service date from 2025-01-01. H5 has 84 services with separate facility and plan multiplier schedules. H4 retains its reviewed 98-service reference. Description matching uses inspected abbreviations and hospital-specific suffix removal; prices and billed units never choose a service. Acceptance thresholds are unchanged; no runtime model or experimental mappings are used.
@@ -24,7 +28,7 @@ Cross-invoice context precedes pricing. Original billed history, inferred delive
 
 ## Assumptions and limits
 
-The user approved H2's recorded service date as its Service Day because 07:00-boundary timestamps are absent, and H5's header facility code as line context because line-level codes are absent. These assumptions appear in evidence. H4 keeps approved inclusive same-patient bidirectional exclusions and earliest eligible lexical retention of exact copies; conflicting copies remain unresolved. H4 population/reset scope stays uncertain. Its three cap-corrected rows (000165/000540/000554) are explicitly assumption-dependent estimates, separated from confirmed cap violations.
+I approved H2's recorded service date as its Service Day because 07:00-boundary timestamps are absent, and H5's header facility code as line context because line-level codes are absent. These assumptions appear in evidence. H4 keeps approved inclusive same-patient bidirectional exclusions and earliest eligible lexical retention of exact copies; conflicting copies remain unresolved. H4 population/reset scope stays uncertain. Its three cap-corrected rows (000165/000540/000554) are explicitly assumption-dependent estimates, separated from confirmed cap violations.
 
 H2/3/5 do not inherit H4's cap correction or duplicate allocation convention: affected amounts are withheld. H2 exclusions explicitly specify same patient and both directions; exact endpoints remain uncertain. H3/H5 positive exclusion cases are withheld because population/direction/endpoints are not explicit; same-patient candidate searching is a documented limitation. Wrong units and all dual-unit ambiguities remain unresolved. Operational compliance involving clinical records, actual submission timestamps, settlement or waivers cannot be established from invoice tables. H2's 60-day submission clause is screened without fabricating a submission date or automatic rejection.
 
@@ -59,6 +63,10 @@ Keep the existing exposed-H1 class heuristic. Strict unique-ID rows with known a
 
 ## Verification and handover
 
-103 tests cover extraction, original H1 behavior, amendment dates, new services, multipliers, per-step rounding, thresholds, cross-invoice bundles/exclusions, duplicate/cap safeguards, unit propagation and submission tampering. H2/3/5 manual checks replay 16 source-based line calculations, nine invoice deltas and nine uncertain cases; H4's existing 20 line calculations, ten erroneous deltas and boundary/cap checks are preserved. Example: H5-L00132-04 rounds 431,375 x1.05 to 452,944, then x.90 to 407,650 cents. Manual checks are not hidden-label validation.
+103 tests cover extraction, original H1 behavior, amendment dates, new services, multipliers, per-step rounding, thresholds, cross-invoice bundles/exclusions, duplicate/cap safeguards, unit propagation and submission tampering. Codex's H2/3/5 checks replay 16 source-based line calculations, nine invoice deltas and nine uncertain cases; H4's existing 20 line calculations, ten erroneous deltas and boundary/cap checks are preserved. Example: H5-L00132-04 rounds 431,375 x1.05 to 452,944, then x.90 to 407,650 cents. These checks are not hidden-label validation.
 
-Run python3 -m assessment_audit, then python3 scripts/verify_assessment.py. Python 3.9+ standard library suffices; PDF-only dependencies are pinned separately. Reproduction checks exact columns, identifiers, original billed cents, integer expected line sums, flags, confidence and output hashes. Source data and H1 remain hash-protected; previous H4 snapshots remain in Git history. Versioned prompts disclose AI-assisted development and approvals. README leads to the short evaluation report, one-page decision log, all evidence and omissions. Remaining work is evidence acquisition/adjudication and target confidence validation; no extra hospital coverage is claimed by guessing unresolved amounts.
+Run python3 -m assessment_audit, then python3 scripts/verify_assessment.py. Python 3.9+ standard library suffices; PDF-only dependencies are pinned separately. Reproduction checks exact columns, identifiers, original billed cents, integer expected line sums, flags, confidence and output hashes. Source data and H1 remain hash-protected; previous H4 snapshots remain in Git history. Versioned prompts disclose AI assistance and my approvals. README links the evaluation report, decision log, evidence and omissions. Unresolved evidence and target confidence validation remain open.
+
+## What I would do with another week.
+
+I tried to keep this auditing as simple as possible for the time constraints and the limited clarity around it, if i had more time i will try to research a possibly of training a ML models or deploying ones to help the engine, as I said the results clearly favors the uncertainty more, but that was the objective that we can met in this time.
